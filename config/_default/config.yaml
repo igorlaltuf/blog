@@ -30,7 +30,7 @@ module:
 ## ADVANCED
 ############################
 
-publishDir: "docs/"
+publishDir: "root/"
 enableGitInfo: false
 summaryLength: 30
 paginate: 10
