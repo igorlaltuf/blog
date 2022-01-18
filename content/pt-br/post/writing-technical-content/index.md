@@ -39,7 +39,7 @@ data.head()
 
 Academic supports the popular [Plotly](https://plot.ly/) chart format.
 
-Save your Plotly JSON in your page folder, for example `chart.json`, and then add the `{{</* chart data="chart" */>}}` shortcode where you would like the chart to appear.
+Save your Plotly JSON in your page folder, for example `chart.json`, and then add the `{{ </* chart data="chart" */> }}` shortcode where you would like the chart to appear.
 
 Demo:
 
@@ -260,10 +260,10 @@ renders as
 
 ### Callouts
 
-Academic supports a [shortcode for callouts](https://wowchemy.com/docs/content/writing-markdown-latex/#callouts), also referred to as *asides*, *hints*, or *alerts*. By wrapping a paragraph in `{{%/* callout note */%}} ... {{%/* /callout */%}}`, it will render as an aside.
+Academic supports a [shortcode for callouts](https://wowchemy.com/docs/content/writing-markdown-latex/#callouts), also referred to as *asides*, *hints*, or *alerts*. By wrapping a paragraph in `{{ %/* callout note */% }} ... {{ %/* /callout */% }}`, it will render as an aside.
 
 ```markdown
-{{%/* callout note */%}}
+{{ %/* callout note */% }}
 A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
 {{%/* /callout */%}}
 ```
@@ -279,9 +279,9 @@ A Markdown aside is useful for displaying notices, hints, or definitions to your
 Add a spoiler to a page to reveal text, such as an answer to a question, after a button is clicked.
 
 ```markdown
-{{</* spoiler text="Click to view the spoiler" */>}}
+{{ </* spoiler text="Click to view the spoiler" */> }}
 You found me!
-{{</* /spoiler */>}}
+{{ </* /spoiler */> }}
 ```
 
 renders as
@@ -295,9 +295,9 @@ Academic enables you to use a wide range of [icons from _Font Awesome_ and _Acad
 Here are some examples using the `icon` shortcode to render icons:
 
 ```markdown
-{{</* icon name="terminal" pack="fas" */>}} Terminal  
-{{</* icon name="python" pack="fab" */>}} Python  
-{{</* icon name="r-project" pack="fab" */>}} R
+{{ </* icon name="terminal" pack="fas" */> }} Terminal  
+{{ </* icon name="python" pack="fab" */> }} Python  
+{{ </* icon name="r-project" pack="fab" */> }} R
 ```
 
 renders as

@@ -893,11 +893,11 @@ data.head()
 </code></pre>
 <h3 id="charts">Charts</h3>
 <p>Academic supports the popular <a href="https://plot.ly/" target="_blank" rel="noopener">Plotly</a> chart format.</p>
-<p>Save your Plotly JSON in your page folder, for example <code>chart.json</code>, and then add the <code>{{&lt; chart data=&quot;chart&quot; &gt;}}</code> shortcode where you would like the chart to appear.</p>
+<p>Save your Plotly JSON in your page folder, for example <code>chart.json</code>, and then add the <code>{{ &lt;/* chart data=&quot;chart&quot; */&gt; }}</code> shortcode where you would like the chart to appear.</p>
 <p>Demo:</p>
 
 
-<div id="chart-953128764" class="chart"></div>
+<div id="chart-134968257" class="chart"></div>
 <script>
   (function() {
     let a = setInterval( function() {
@@ -907,7 +907,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json("./line-chart.json", function(chart) {
-        Plotly.plot('chart-953128764', chart.data, chart.layout, {responsive: true});
+        Plotly.plot('chart-134968257', chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1093,8 +1093,8 @@ Crash --&gt; [*]
 </tbody>
 </table>
 <h3 id="callouts">Callouts</h3>
-<p>Academic supports a <a href="https://wowchemy.com/docs/content/writing-markdown-latex/#callouts" target="_blank" rel="noopener">shortcode for callouts</a>, also referred to as <em>asides</em>, <em>hints</em>, or <em>alerts</em>. By wrapping a paragraph in <code>{{% callout note %}} ... {{% /callout %}}</code>, it will render as an aside.</p>
-<pre><code class="language-markdown">{{% callout note %}}
+<p>Academic supports a <a href="https://wowchemy.com/docs/content/writing-markdown-latex/#callouts" target="_blank" rel="noopener">shortcode for callouts</a>, also referred to as <em>asides</em>, <em>hints</em>, or <em>alerts</em>. By wrapping a paragraph in <code>{{ %/* callout note */% }} ... {{ %/* /callout */% }}</code>, it will render as an aside.</p>
+<pre><code class="language-markdown">{{ %/* callout note */% }}
 A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
 {{% /callout %}}
 </code></pre>
@@ -1106,9 +1106,9 @@ A Markdown aside is useful for displaying notices, hints, or definitions to your
 </div>
 <h3 id="spoilers">Spoilers</h3>
 <p>Add a spoiler to a page to reveal text, such as an answer to a question, after a button is clicked.</p>
-<pre><code class="language-markdown">{{&lt; spoiler text=&quot;Click to view the spoiler&quot; &gt;}}
+<pre><code class="language-markdown">{{ &lt;/* spoiler text=&quot;Click to view the spoiler&quot; */&gt; }}
 You found me!
-{{&lt; /spoiler &gt;}}
+{{ &lt;/* /spoiler */&gt; }}
 </code></pre>
 <p>renders as</p>
 <details class="spoiler "  id="spoiler-2">
@@ -1118,9 +1118,9 @@ You found me!
 <h3 id="icons">Icons</h3>
 <p>Academic enables you to use a wide range of <a href="https://sourcethemes.com/academic/docs/page-builder/#icons" target="_blank" rel="noopener">icons from <em>Font Awesome</em> and <em>Academicons</em></a> in addition to <a href="https://sourcethemes.com/academic/docs/writing-markdown-latex/#emojis" target="_blank" rel="noopener">emojis</a>.</p>
 <p>Here are some examples using the <code>icon</code> shortcode to render icons:</p>
-<pre><code class="language-markdown">{{&lt; icon name=&quot;terminal&quot; pack=&quot;fas&quot; &gt;}} Terminal  
-{{&lt; icon name=&quot;python&quot; pack=&quot;fab&quot; &gt;}} Python  
-{{&lt; icon name=&quot;r-project&quot; pack=&quot;fab&quot; &gt;}} R
+<pre><code class="language-markdown">{{ &lt;/* icon name=&quot;terminal&quot; pack=&quot;fas&quot; */&gt; }} Terminal  
+{{ &lt;/* icon name=&quot;python&quot; pack=&quot;fab&quot; */&gt; }} Python  
+{{ &lt;/* icon name=&quot;r-project&quot; pack=&quot;fab&quot; */&gt; }} R
 </code></pre>
 <p>renders as</p>
 <p>
