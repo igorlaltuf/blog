@@ -258,6 +258,26 @@
       href="https://igorlaltuf.github.io/en/post/jupyter/"
     /></url>
   <url>
+    <loc>https://igorlaltuf.github.io/en/slides/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod><xhtml:link
+      rel="alternate"
+      hreflang="pt-br"
+      href="https://igorlaltuf.github.io/slides/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://igorlaltuf.github.io/en/slides/"
+    /></url>
+  <url>
+    <loc>https://igorlaltuf.github.io/en/slides/example/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod><xhtml:link
+      rel="alternate"
+      hreflang="pt-br"
+      href="https://igorlaltuf.github.io/slides/example/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://igorlaltuf.github.io/en/slides/example/"
+    /></url>
+  <url>
     <loc>https://igorlaltuf.github.io/en/tag/deep-learning/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://igorlaltuf.github.io/en/tag/demo/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
