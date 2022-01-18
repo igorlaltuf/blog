@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software | Igor Laltuf</title>
+    <link>https://igorlaltuf.github.io/tag/software/</link>
+      <atom:link href="https://igorlaltuf.github.io/tag/software/index.xml" rel="self" type="application/rss+xml" />
+    <description>Software</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2022 Igor Laltuf</copyright><lastBuildDate>Mon, 18 Jan 2016 10:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://igorlaltuf.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Software</title>
+      <link>https://igorlaltuf.github.io/tag/software/</link>
+    </image>
+    
+    <item>
+      <title>O pacote DAIL - Data from Access to Information Law</title>
+      <link>https://igorlaltuf.github.io/project/internal-project/</link>
+      <pubDate>Mon, 18 Jan 2016 10:00:00 +0000</pubDate>
+      <guid>https://igorlaltuf.github.io/project/internal-project/</guid>
+      <description>&lt;p&gt;A Lei de Acesso à Informação brasileira (&lt;a href=&#34;http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lei nº 12.527/2011&lt;/a&gt;) entrou em vigor em 16 de maio de 2012 e representou uma evolução no acesso aos dados públicos. Ela permite, de forma gratuita, o acesso a qualquer informação pública produzida ou custodiada pelos órgãos e entidades da Administração Pública, salvo algumas exceções. Tampouco existe a necessidade de justificar a razão pela qual os dados estão sendo solicitados.&lt;/p&gt;
+&lt;p&gt;Entretanto, nem tudo são flores. Existe um prazo de 20 dias, prorrogável por mais 10 dias, para que os órgãos públicos respondam ao pedido. Pela minha experiência pessoal, imagino que pela quantidade de demandas que estas instituições recebem, as respostas costumam ser enviadas perto do fim do prazo. Ou seja, dificilmente você terá a sua resposta na mesma semana em que realizou o pedido.&lt;/p&gt;
+&lt;p&gt;O pacote &lt;a href=&#34;https://cran.r-project.org/web/packages/dail/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DAIL&lt;/a&gt; (Data from Access to Information Law/Dados da Lei de Acesso à Informação) foi desenvolvido pensando na possibilidade de que alguém já tenha feito a mesma pergunta que você pretende fazer e até mesmo auxiliar na etapa de análise exploratória de uma pesquisa. Ele permite acessar via R os dados dos pedidos e recursos no âmbito da Lei de Acesso à Informação (LAI) - Lei 12.527/2011 - disponibilizados pela Controladoria-Geral da União (CGU).&lt;/p&gt;
+&lt;p&gt;Vale ressaltar que os conteúdos dos pedidos, das respostas e dos recursos foram disponibilizados apenas a partir do ano de 2015. Segundo a CGU, isso se dá em função das necessidades de regulamentação e da prévia orientação/capacitação operacional dos órgãos federais para tal abertura de dados, o que só aconteceu em 18 de maio de 2015 por meio da &lt;a href=&#34;https://www.gov.br/acessoainformacao/pt-br/assuntos/legislacao-relacionada-1/cgu-prt-inter-1254.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Portaria Interministerial nº 1.254/2015&lt;/a&gt;. Por esta razão não é possível acessar os dados contendo os pedidos e recursos do ano de 2012 até 2014.&lt;/p&gt;
+&lt;p&gt;Em breve será disponibilizado no blog um tutorial de como usar o pacote. Por enquanto, existe um passo a passo na página do projeto no &lt;a href=&#34;https://github.com/igorlaltuf/dail&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

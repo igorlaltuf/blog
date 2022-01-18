@@ -6,16 +6,26 @@ theme: "starter-hugo-academic"
 
 title: Igor Laltuf # Website name
 baseurl: 'https://igorlaltuf.github.io/' # Website URL
-copyright: '© {year} Igor' # Footer text, e.g. '© {year} Me'
+copyright: '© {year} Igor Laltuf' # Footer text, e.g. '© {year} Me'
 
 ############################
 ## LANGUAGE
 ############################
 
-defaultContentLanguage: en
+defaultContentLanguage: pt-br
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
+languages:
+  pt-br:
+    params:
+      linkedin: https://www.linkedin.com/in/igor-laltuf/
+    title: Igor Laltuf
+
+  en:
+    params:
+      linkedin: https://www.linkedin.com/in/igor-laltuf/
+    title: Igor Laltuf
 
 ############################
 ## MODULES

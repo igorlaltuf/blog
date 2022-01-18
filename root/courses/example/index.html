@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-us" >
+<!DOCTYPE html><html lang="pt-br" >
 
 
 <head>
@@ -53,7 +53,7 @@
   
   
 
-  <meta name="author" content="Alice Bighetti (吳恩達)" />
+  <meta name="author" content="Igor Laltuf" />
 
   
   
@@ -63,7 +63,9 @@
   <meta name="description" content="An example of using Wowchemy&#39;s Book layout for publishing online courses." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://igorlaltuf.github.io/courses/example/" />
+    <link rel="alternate" hreflang="en" href="https://igorlaltuf.github.io/en/courses/example/" />
+  
+  <link rel="alternate" hreflang="pt-br" href="https://igorlaltuf.github.io/courses/example/" />
 
   
   
@@ -82,6 +84,8 @@
   
   
     
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -254,6 +258,45 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0C1R76NDV5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-0C1R76NDV5', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -303,7 +346,7 @@
   <meta property="og:url" content="https://igorlaltuf.github.io/courses/example/" />
   <meta property="og:title" content="📊 Learn Data Science | Igor Laltuf" />
   <meta property="og:description" content="An example of using Wowchemy&#39;s Book layout for publishing online courses." /><meta property="og:image" content="https://igorlaltuf.github.io/courses/example/featured.jpg" />
-    <meta property="twitter:image" content="https://igorlaltuf.github.io/courses/example/featured.jpg" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:image" content="https://igorlaltuf.github.io/courses/example/featured.jpg" /><meta property="og:locale" content="pt-br" />
   
     
       <meta property="og:updated_time" content="2021-01-24T00:00:00&#43;00:00" />
@@ -348,7 +391,7 @@
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1>Search</h1>
+          <h1></h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -357,9 +400,9 @@
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="" autocapitalize="off"
         autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Search...">
+        aria-label="">
         
       </div>
 
@@ -407,7 +450,7 @@
 
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="">
       <span><i class="fas fa-bars"></i></span>
       </button>
       
@@ -457,155 +500,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Demo</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#projects"><span>Projects</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+            <a class="nav-link " href="/#about"><span>Sobre</span></a>
           </li>
 
           
@@ -635,7 +530,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link  active" href="/courses/"><span>Courses</span></a>
+            <a class="nav-link " href="/project/"><span>Software | Dados</span></a>
           </li>
 
           
@@ -662,17 +557,100 @@
               
             
             
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/publication/"><span>Publicações</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
               
               
-              
-                
-              
-              
+            
             
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+            <a class="nav-link " href="/event/"><span>Eventos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link  active" href="/courses/"><span>Cursos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/post/"><span>Blog</span></a>
           </li>
 
           
@@ -689,19 +667,12 @@
         
         
           
-            
-            <li class="nav-item d-none d-lg-inline-flex">
-              <a class="nav-link" href="https://twitter.com/GeorgeCushen" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-              </a>
-            </li>
-          
         
 
         
         
         <li class="nav-item">
-          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+          <a class="nav-link js-search" href="#" aria-label=""><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
         
 
@@ -726,6 +697,22 @@
         
 
         
+        
+        <li class="nav-item dropdown i18n-dropdown">
+          <a href="#" class="nav-link " data-toggle="dropdown"
+             aria-haspopup="true" aria-label="Languages">
+            <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item dropdown-item-active">
+              <span></span>
+            </div>
+            
+            <a class="dropdown-item" href="https://igorlaltuf.github.io/en/courses/example/">
+              <span>English</span>
+            </a>
+            
+          </div>
+        </li>
         
 
       </ul>
@@ -762,7 +749,7 @@
   
   <button class="form-control sidebar-search js-search d-none d-md-flex">
     <i class="fas fa-search pr-2"></i>
-    <span class="sidebar-search-text">Search...</span>
+    <span class="sidebar-search-text"></span>
     <span class="sidebar-search-shortcut">/</span>
   </button>
   
@@ -840,7 +827,7 @@
       
 
       <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+        <li><a href="#" id="back_to_top" class="docs-toc-title"></a></li>
       </ul>
 
       <nav id="TableOfContents">
@@ -931,7 +918,7 @@
                loading="lazy" data-zoomable /></div>
   </div></figure>
 <details class="toc-inpage d-print-none d-xl-none " open>
-  <summary class="font-weight-bold">Table of Contents</summary>
+  <summary class="font-weight-bold"></summary>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#what-you-will-learn">What you will learn</a></li>
@@ -978,7 +965,7 @@
 
 
 <h2 id="meet-your-instructor">Meet your instructor</h2>
-<a href="/author/alice-bighetti-%E5%90%B3%E6%81%A9%E9%81%94/">Alice Bighetti (吳恩達)</a>
+<a href="/author/igor-laltuf/">Igor Laltuf</a>
 <h2 id="faqs">FAQs</h2>
 <details class="spoiler "  id="spoiler-9">
   <summary>Are there prerequisites?</summary>
@@ -1018,7 +1005,7 @@
         </div>
 
         <div class="body-footer">
-          <p>Last updated on Jan 24, 2021</p>
+          <p> Jan 24, 2021</p>
 
           
 
@@ -1055,7 +1042,7 @@
 
   
   <p class="powered-by">
-    © 2022 Igor
+    © 2022 Igor Laltuf
   </p>
   
 
@@ -1099,7 +1086,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
+        <h5 class="modal-title"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -1109,10 +1096,10 @@
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
+          <i class="fas fa-copy"></i> 
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
+          <i class="fas fa-download"></i> 
         </a>
         <div id="modal-error"></div>
       </div>
@@ -1228,7 +1215,7 @@
       
     
     
-    <script src="/en/js/wowchemy.min.247fd8f54253895301106e3006f53f38.js"></script>
+    <script src="/pt-br/js/wowchemy.min.3a17c500e74c8a344a38f62db2a5a2ba.js"></script>
 
     
   <script async defer src="https://buttons.github.io/buttons.js"></script>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eduardo Crespo | Igor Laltuf</title>
+    <link>https://igorlaltuf.github.io/author/eduardo-crespo/</link>
+      <atom:link href="https://igorlaltuf.github.io/author/eduardo-crespo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Eduardo Crespo</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2022 Igor Laltuf</copyright><lastBuildDate>Wed, 30 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://igorlaltuf.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Eduardo Crespo</title>
+      <link>https://igorlaltuf.github.io/author/eduardo-crespo/</link>
+    </image>
+    
+    <item>
+      <title>El Banco de Desarrollo del Brasil en el proceso de neoliberalización reciente (2003-2019)</title>
+      <link>https://igorlaltuf.github.io/publication/journal-article/</link>
+      <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://igorlaltuf.github.io/publication/journal-article/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

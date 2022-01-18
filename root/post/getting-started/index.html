@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-us" >
+<!DOCTYPE html><html lang="pt-br" >
 
 
 <head>
@@ -53,7 +53,7 @@
   
   
 
-  <meta name="author" content="Alice Bighetti (吳恩達)" />
+  <meta name="author" content="Igor Laltuf" />
 
   
   
@@ -63,7 +63,9 @@
   <meta name="description" content="Welcome 👋 We know that first impressions are important, so we&#39;ve populated your new site with some initial content to help you get familiar with everything in no time." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://igorlaltuf.github.io/post/getting-started/" />
+    <link rel="alternate" hreflang="en" href="https://igorlaltuf.github.io/en/post/getting-started/" />
+  
+  <link rel="alternate" hreflang="pt-br" href="https://igorlaltuf.github.io/post/getting-started/" />
 
   
   
@@ -82,6 +84,8 @@
   
   
     
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -254,6 +258,45 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0C1R76NDV5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-0C1R76NDV5', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -301,7 +344,7 @@
   <meta property="og:url" content="https://igorlaltuf.github.io/post/getting-started/" />
   <meta property="og:title" content="Welcome to Wowchemy, the website builder for Hugo | Igor Laltuf" />
   <meta property="og:description" content="Welcome 👋 We know that first impressions are important, so we&#39;ve populated your new site with some initial content to help you get familiar with everything in no time." /><meta property="og:image" content="https://igorlaltuf.github.io/post/getting-started/featured.jpg" />
-    <meta property="twitter:image" content="https://igorlaltuf.github.io/post/getting-started/featured.jpg" /><meta property="og:locale" content="en-us" />
+    <meta property="twitter:image" content="https://igorlaltuf.github.io/post/getting-started/featured.jpg" /><meta property="og:locale" content="pt-br" />
   
     
       <meta
@@ -346,7 +389,7 @@
   
   "author": {
     "@type": "Person",
-    "name": "Alice Bighetti (吳恩達)"
+    "name": "Igor Laltuf"
   },
   
   "publisher": {
@@ -399,7 +442,7 @@
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1>Search</h1>
+          <h1></h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -408,9 +451,9 @@
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="" autocapitalize="off"
         autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Search...">
+        aria-label="">
         
       </div>
 
@@ -458,7 +501,7 @@
 
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="">
       <span><i class="fas fa-bars"></i></span>
       </button>
       
@@ -508,155 +551,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Demo</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#projects"><span>Projects</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#featured"><span>Publications</span></a>
+            <a class="nav-link " href="/#about"><span>Sobre</span></a>
           </li>
 
           
@@ -686,7 +581,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/courses/"><span>Courses</span></a>
+            <a class="nav-link " href="/project/"><span>Software | Dados</span></a>
           </li>
 
           
@@ -713,17 +608,100 @@
               
             
             
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/publication/"><span>Publicações</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
               
               
-              
-                
-              
-              
+            
             
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+            <a class="nav-link " href="/event/"><span>Eventos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/courses/"><span>Cursos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link  active" href="/post/"><span>Blog</span></a>
           </li>
 
           
@@ -740,19 +718,12 @@
         
         
           
-            
-            <li class="nav-item d-none d-lg-inline-flex">
-              <a class="nav-link" href="https://twitter.com/GeorgeCushen" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-              </a>
-            </li>
-          
         
 
         
         
         <li class="nav-item">
-          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+          <a class="nav-link js-search" href="#" aria-label=""><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
         
 
@@ -777,6 +748,22 @@
         
 
         
+        
+        <li class="nav-item dropdown i18n-dropdown">
+          <a href="#" class="nav-link " data-toggle="dropdown"
+             aria-haspopup="true" aria-label="Languages">
+            <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item dropdown-item-active">
+              <span></span>
+            </div>
+            
+            <a class="dropdown-item" href="https://igorlaltuf.github.io/en/post/getting-started/">
+              <span>English</span>
+            </a>
+            
+          </div>
+        </li>
         
 
       </ul>
@@ -837,7 +824,7 @@
     
 
   <span class="author-highlighted">
-      <a href="/author/alice-bighetti-%E5%90%B3%E6%81%A9%E9%81%94/">Alice Bighetti (吳恩達)</a></span>, <span >
+      <a href="/author/igor-laltuf/">Igor Laltuf</a></span>, <span >
       <a href="/author/%E5%90%B3%E6%81%A9%E9%81%94/">吳恩達</a></span>
   </div>
   
@@ -858,7 +845,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    3 
   </span>
   
 
@@ -1078,13 +1065,13 @@
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://igorlaltuf.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/alice-bighetti-%E5%90%B3%E6%81%A9%E9%81%94/avatar_hu3c64bd0f98018e2d901b7c60447ac42e_1387900_270x270_fill_q75_lanczos_center.jpg" alt="Alice Bighetti (吳恩達)"></a>
+      <a href="https://igorlaltuf.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/igor-laltuf/avatar_hu6ecd24c6d2ca2793480f1d4fcd6eb950_2177491_270x270_fill_q75_lanczos_center.jpg" alt="Igor Laltuf"></a>
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="https://igorlaltuf.github.io/">Alice Bighetti (吳恩達)</a></h5>
-      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
-      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <h5 class="card-title"><a href="https://igorlaltuf.github.io/">Igor Laltuf</a></h5>
+      <h6 class="card-subtitle">Economista e mestrando em Planejamento Urbano e Regional</h6>
+      
       <ul class="network-icon" aria-hidden="true">
   
     
@@ -1099,8 +1086,8 @@
       
     
     <li>
-      <a href="/#contact" >
-        <i class="fas fa-envelope"></i>
+      <a href="https://www.researchgate.net/profile/Igor-Laltuf" target="_blank" rel="noopener">
+        <i class="fab fa-researchgate"></i>
       </a>
     </li>
   
@@ -1116,41 +1103,7 @@
       
     
     <li>
-      <a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
-        <i class="fas fa-graduation-cap"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/gcushen" target="_blank" rel="noopener">
+      <a href="https://github.com/igorlaltuf" target="_blank" rel="noopener">
         <i class="fab fa-github"></i>
       </a>
     </li>
@@ -1167,8 +1120,40 @@
       
     
     <li>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+      <a href="https://orcid.org/0000-0002-5614-4404" target="_blank" rel="noopener">
+        <i class="fab fa-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/igor-laltuf" target="_blank" rel="noopener">
         <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/5699782942046423" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
       </a>
     </li>
   
@@ -1226,7 +1211,7 @@
 
   
   <p class="powered-by">
-    © 2022 Igor
+    © 2022 Igor Laltuf
   </p>
   
 
@@ -1262,7 +1247,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
+        <h5 class="modal-title"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -1272,10 +1257,10 @@
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
+          <i class="fas fa-copy"></i> 
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
+          <i class="fas fa-download"></i> 
         </a>
         <div id="modal-error"></div>
       </div>
@@ -1387,7 +1372,7 @@
       
     
     
-    <script src="/en/js/wowchemy.min.247fd8f54253895301106e3006f53f38.js"></script>
+    <script src="/pt-br/js/wowchemy.min.3a17c500e74c8a344a38f62db2a5a2ba.js"></script>
 
     
   <script async defer src="https://buttons.github.io/buttons.js"></script>
