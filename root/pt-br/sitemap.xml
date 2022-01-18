@@ -70,16 +70,6 @@
   <url>
     <loc>https://igorlaltuf.github.io/talk/mobilidade-urbana-no-contexto-desigual-da-pandemia-de-covid-19/</loc><lastmod>2021-12-03T17:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://igorlaltuf.github.io/talk/mobilidade-urbana-no-contexto-desigual-da-pandemia-de-covid-19/</loc><lastmod>2021-12-03T17:00:00+00:00</lastmod><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://igorlaltuf.github.io/en/talk/example-talk/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="pt-br"
-      href="https://igorlaltuf.github.io/talk/mobilidade-urbana-no-contexto-desigual-da-pandemia-de-covid-19/"
-    /></url>
-  <url>
     <loc>https://igorlaltuf.github.io/tags/</loc><lastmod>2021-12-03T17:00:00+00:00</lastmod><xhtml:link
       rel="alternate"
       hreflang="en"
@@ -89,6 +79,8 @@
       hreflang="pt-br"
       href="https://igorlaltuf.github.io/tags/"
     /></url>
+  <url>
+    <loc>https://igorlaltuf.github.io/talk/indicadores-de-saude-nas-cidades-intermediarias-amazonicas-como-sinalizadores-de-segregacao-social-e-injustica-ambiental/</loc><lastmod>2021-12-03T14:00:00+00:00</lastmod></url>
   <url>
     <loc>https://igorlaltuf.github.io/publication-type/2/</loc><lastmod>2021-06-30T00:00:00+00:00</lastmod><xhtml:link
       rel="alternate"
@@ -116,15 +108,7 @@
   <url>
     <loc>https://igorlaltuf.github.io/author/eduardo-crespo/</loc><lastmod>2021-06-30T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://igorlaltuf.github.io/publication/journal-article/</loc><lastmod>2021-06-30T00:00:00+00:00</lastmod><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://igorlaltuf.github.io/en/publication/journal-article/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="pt-br"
-      href="https://igorlaltuf.github.io/publication/journal-article/"
-    /></url>
+    <loc>https://igorlaltuf.github.io/publication/artigo-javier-2021/</loc><lastmod>2021-06-30T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://igorlaltuf.github.io/author/igor-laltuf/</loc><lastmod>2021-06-30T00:00:00+00:00</lastmod><xhtml:link
       rel="alternate"
@@ -280,15 +264,7 @@
       href="https://igorlaltuf.github.io/publication-type/3/"
     /></url>
   <url>
-    <loc>https://igorlaltuf.github.io/publication/preprint/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://igorlaltuf.github.io/en/publication/preprint/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="pt-br"
-      href="https://igorlaltuf.github.io/publication/preprint/"
-    /></url>
+    <loc>https://igorlaltuf.github.io/publication/livro-ettern/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://igorlaltuf.github.io/tag/source-themes/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod><xhtml:link
       rel="alternate"
@@ -384,14 +360,4 @@
       rel="alternate"
       hreflang="pt-br"
       href="https://igorlaltuf.github.io/admin/"
-    /></url>
-  <url>
-    <loc>https://igorlaltuf.github.io/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://igorlaltuf.github.io/en/author/%E5%90%B3%E6%81%A9%E9%81%94/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="pt-br"
-      href="https://igorlaltuf.github.io/author/%E5%90%B3%E6%81%A9%E9%81%94/"
     /></url></urlset>
