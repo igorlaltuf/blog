@@ -25,4 +25,4 @@ O pacote [DAIL](https://cran.r-project.org/web/packages/dail/index.html) (Data f
 
 Vale ressaltar que os conteúdos dos pedidos, das respostas e dos recursos foram disponibilizados apenas a partir do ano de 2015. Segundo a CGU, isso se dá em função das necessidades de regulamentação e da prévia orientação/capacitação operacional dos órgãos federais para tal abertura de dados, o que só aconteceu em 18 de maio de 2015 por meio da [Portaria Interministerial nº 1.254/2015](https://www.gov.br/acessoainformacao/pt-br/assuntos/legislacao-relacionada-1/cgu-prt-inter-1254.pdf). Por esta razão não é possível acessar os dados contendo os pedidos e recursos do ano de 2012 até 2014.
 
-Em breve será disponibilizado no blog um tutorial de como usar o pacote. Por enquanto, existe um passo a passo na página do projeto no [GitHub](https://github.com/igorlaltuf/dail). 
+Em breve será disponibilizado no blog um tutorial sobre como usar o pacote. Por enquanto, existe um passo a passo na página do projeto no [GitHub](https://github.com/igorlaltuf/dail). 

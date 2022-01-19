@@ -2,9 +2,9 @@
 header:
   caption: ""
   image: ""
-title: Courses
+title: Cursos
 type: page
 view: 2
 ---
 
-I teach the following courses:
+Esses são os cursos que estarão disponíveis em breve (2022).

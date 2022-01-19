@@ -1,0 +1,122 @@
+---
+title: Como usar o pacote sidraR
+author: ''
+date: '2022-01-19'
+slug: como-usar-o-pacote-sidrar
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-19T11:21:04-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+O pacote sidraR permite acessar os dados do [Sidra](https://sidra.ibge.gov.br/) - Sistema IBGE de Recuperação Automática diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para tentar responder a seguinte pergunta: Quais são os 10 municípios na região Norte responsáveis pela maior parte do valor de Soja produzido no país na última década?
+
+Como o pacote está no [CRAN](https://cran.r-project.org/web/packages/sidrar/index.html), a instalação será pelo comando:
+```r
+install.packages('sidrar')
+```
+
+```{r include=FALSE}
+library(sidrar)
+library(dplyr)
+```
+
+A função abaixo permite que eu busque por determinadas palavras-chave nos títulos das tabelas do SIDRA. Importante: não é permitido usar acentos nessa função. <br>
+```{r paged.print=FALSE, cache = TRUE, attr.output='style="max-height: 180px;"'}
+x <- search_sidra('lavouras temporarias quantidade produzida')
+x
+```
+
+Após uma breve leitura dos nomes das tabelas, percebemos que a informação que precisamos está na Tabela 1612: Área plantada, área colhida, quantidade produzida, rendimento médio e valor da produção das lavouras temporárias.
+
+É por meio da função get_sidra() que conseguimos baixar os dados do IBGE para o R. Por meio dos atributos da função eu consigo determinar o nível de detalhe do dado baixado (microrregião, município, estado etc), filtrar apenas as informações de uma região, e até mesmo selecionar uma variável específica. Para saber os dados
+
+```{r message=FALSE, warning=FALSE}
+x <- get_sidra(x = 1612)
+knitr::kable(x) %>% 
+  kableExtra::scroll_box(height = '400px', width = '100%') 
+```
+<br>
+Nesse caso, o objetivo é baixar os dados do valor da produção, que é a variável número 215 segundo a tabela acima. Desse modo, para baixar os dados da última década do valor produzido de todas as culturas presentes nessa tabela por município e apenas para a região Norte, eu uso o seguinte código:
+```r
+ano <- as.character(c(2011:2020))
+x <- get_sidra(x = 1612,
+               geo = 'City', 
+               geo.filter = list('Region' = 1),
+               variable = 215,
+               period = ano
+              )
+```
+
+<br>
+O problema é que ao usar a função get_sidra para baixar os dados da tabela, somos surpreendidos com a mensagem: "Quantidade de valores solicitados: 152660 excedeu o limite: 50000". Ou seja, existe uma limitação de que os dados baixados sejam de apenas 50.000 por requisição. Para contornar essa limitação, a solução foi fazer uma requisição para cada ano e ir armazenando os resultados em uma tabela que criativamente foi chamada de "tabela".
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE, paged.print=FALSE}
+
+ano <- as.character(c(2011:2020))
+tabela <- data.frame() # criar um df vazio
+
+for(i in ano){
+x <- get_sidra(x = 1612,
+               geo = 'City',
+               geo.filter = list('Region' = 1),
+               variable = 215,
+               period = i
+              )
+tabela <- rbind(tabela,x)
+}
+
+```
+
+Podemos ver as primeiras linhas da nova tabela abaixo:
+```{r message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE}
+head.tabela <- head(tabela)
+knitr::kable(head.tabela)
+```
+
+Agora vamos filtrar a produção de soja:
+```{r paged.print=FALSE, cache = FALSE}
+tabela1 <- tabela %>% 
+  janitor::clean_names() %>% 
+  dplyr::filter(produto_das_lavouras_temporarias %in% "Soja (em grão)") %>% 
+  select(5,6,7,9) %>% 
+  replace(is.na(.), 0)
+
+knitr::kable(tabela1) %>% 
+  kableExtra::scroll_box(height = '400px', width = '100%') 
+```
+
+Valor nominal total
+
+```{r}
+valor_acumulado <- tabela1 %>% 
+  group_by(municipio_codigo, municipio) %>% 
+  summarise(valor_total = sum(valor)) 
+
+total <- sum(valor_acumulado$valor_total)
+
+# continuar daqui!
+ valor_acumulado <- valor_acumulado %>%
+   mutate(percentual = valor_total/total) %>% 
+   arrange(desc(percentual))
+
+```
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,5 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: My research interests include distributed robotics, mobile computing and programmable matter.
 Educação:
   courses:
   - course: Mestrado em Planejamento Urbano e Regional
@@ -15,7 +14,7 @@ Interesses:
 - Relações entre governo e setor privado
 - Infraestrutura de transporte público
 - Desenvolvimento sustentável
-- Economia política
+- Economia política 
 Organizações:
 - name: IPPUR-UFRJ
   url: https://ippur.ufrj.br/

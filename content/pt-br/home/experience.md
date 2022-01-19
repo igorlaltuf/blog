@@ -27,15 +27,17 @@ experience:
     company_url: ''
     company_logo: fao-onu
     location: Remoto
-    date_start: '2021-01-01'
-    date_end: ''
+    date_start: '2021-04-01'
+    date_end: '2021-12-01'
     description: |2-
-        Responsibilities include:
+        Responsabilidades:
         
-        * Analysing
-        * Modelling
-        * Deploying
-        
+        * Análise de dados com R
+        * Elaboração de mapas
+        * Produção de relatórios e artigos científicos
+        * Apresentação de resultados
+        * Treinamento da equipe em Excel
+
   - title: Consultor de economia
     company: ATEMAB - UFRRJ
     company_url: ''
@@ -43,7 +45,26 @@ experience:
     location: Remoto
     date_start: '2016-01-01'
     date_end: '2020-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    description: |2-
+        Responsabilidades:
+        * Operacionalização do relatório no Excel
+        * Produção de relatórios
+        * Levantamento da legislação sobre lucros cessantes.
+        
+  - title: Pesquisador
+    company: ETTERN - IPPUR - UFRJ
+    company_url: ''
+    company_logo: ettern
+    location: Remoto
+    date_start: '2016-01-01'
+    date_end: '2020-12-31'
+    description: |2-
+        Responsabilidades:
+        * Análise e consolidação de dados sobre financiamento público
+        * Apresentação de resultados
+        * Coordenação do trabalho dos alunos de graduação
+        * Realização de entrevistas
+        
 
 design:
   columns: '2'

@@ -4,6 +4,6 @@ header:
   caption: ""
   image: ""
   type: page
-title: Posts
+title: Blog
 view: 2
 ---
