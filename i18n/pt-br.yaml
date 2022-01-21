@@ -27,16 +27,16 @@
   translation: Related
 
 - id: minute_read
-  translation: min read
+  translation: min leitura
 
 - id: previous
-  translation: Previous
+  translation: Anterior
 
 - id: next
-  translation: Next
+  translation: Próximo
 
 - id: figure
-  translation: 'Figure %d:'
+  translation: 'Figura %d:'
 
 - id: edit_page
   translation: Edit this page
@@ -70,25 +70,25 @@
   translation: Slides
 
 - id: btn_video
-  translation: Video
+  translation: Vídeo
 
 - id: btn_code
-  translation: Code
+  translation: Código
 
 - id: btn_dataset
-  translation: Dataset
+  translation: Dados
 
 - id: btn_project
-  translation: Project
+  translation: Projeto
 
 - id: btn_poster
   translation: Poster
 
 - id: btn_source
-  translation: Source Document
+  translation: Documento original
 
 - id: btn_copy
-  translation: Copy
+  translation: Copiar
 
 - id: btn_download
   translation: Download
@@ -107,43 +107,43 @@
 # Accomplishments widget
 
 - id: see_certificate
-  translation: See certificate
+  translation: Ver certificado
 
 # Experience widget
 
 - id: present
-  translation: Present
+  translation: Atual
 
 # Pages widget
 
 - id: more_pages
-  translation: See all
+  translation: Ver todos
 
 - id: more_posts
-  translation: See all posts
+  translation: Ver todos os posts
 
 - id: more_talks
-  translation: See all events
+  translation: Ver todos os eventos
 
 - id: more_publications
-  translation: See all publications
+  translation: Ver todas as publicações
 
 # Contact widget
 
 - id: contact_name
-  translation: Name
+  translation: Nome
 
 - id: contact_email
-  translation: Email
+  translation: E-mail
 
 - id: contact_message
-  translation: Message
+  translation: Mensagem
   
 - id: contact_attachment
-  translation: Attach file
+  translation: Anexar arquivo
 
 - id: contact_send
-  translation: Send
+  translation: Enviar
 
 - id: book_appointment
   translation: Book an appointment
@@ -151,57 +151,57 @@
 # Publication/Event details
 
 - id: abstract
-  translation: Abstract
+  translation: Resumo
 
 - id: publication
-  translation: Publication
+  translation: Publicação
 
 - id: publication_type
-  translation: Type
+  translation: Tipo
 
 - id: date
-  translation: Date
+  translation: Data
 
 - id: last_updated
-  translation: Last updated on
+  translation: Atualizado em
 
 - id: event
-  translation: Event
+  translation: Evento
 
 - id: location
-  translation: Location
+  translation: Local
 
 - id: pub_uncat
-  translation: Uncategorized
+  translation: Não categorizado
 
 - id: pub_conf
-  translation: Conference paper
+  translation: Artigo de congresso
 
 - id: pub_journal
-  translation: Journal article
+  translation: Artigo
 
 - id: pub_preprint
   translation: Preprint
 
 - id: pub_report
-  translation: Report
+  translation: Relatório
 
 - id: pub_book
-  translation: Book
+  translation: Livro
 
 - id: pub_book_section
-  translation: Book section
+  translation: Capítulo de livro
 
 - id: pub_thesis
-  translation: Thesis
+  translation: Tese
 
 - id: pub_patent
-  translation: Patent
+  translation: Patente
 
 # Project details
 
 - id: open_project_site
-  translation: Go to Project Site
+  translation: Acessar site do projeto
 
 # Content types for default archive page titles and search results
 
@@ -209,33 +209,33 @@
   translation: Posts
 
 - id: publications
-  translation: Publications
+  translation: Publicações
 
 - id: talks
-  translation: Events
+  translation: Eventos
 
 - id: projects
-  translation: Projects
+  translation: Projetos
 
 - id: slides
   translation: Slides
 
 - id: authors
-  translation: Authors
+  translation: Autores
 
 # Search
 
 - id: search
-  translation: Search
+  translation: Busca
 
 - id: search_placeholder
-  translation: Search...
+  translation: Busca...
 
 - id: search_results
-  translation: results found
+  translation: Resultados encontrados
 
 - id: search_no_results
-  translation: No results found
+  translation: Nenhum resultado encontrado
 
 - id: search_common_queries
   translation: Common searches
@@ -243,7 +243,7 @@
 # Error 404
 
 - id: page_not_found
-  translation: Page not found
+  translation: Página não encontrada
 
 - id: 404_recommendations
   translation: Perhaps you were looking for one of these?

@@ -10,8 +10,11 @@ tags:
 - Linguagem R
 - Pacotes
 - Software
+links:
+- name: CRAN
+  url: https://cran.r-project.org/web/packages/dail/index.html
 title: O pacote DAIL - Data from Access to Information Law
-url_code: ""
+url_code: "https://github.com/igorlaltuf/dail"
 url_pdf: ""
 url_slides: ""
 url_video: ""

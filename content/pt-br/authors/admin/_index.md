@@ -12,7 +12,7 @@ email: ""
 highlight_name: true
 interests:
 - Relações entre governo e setor privado
-- Infraestrutura de transporte público
+- Infraestruturas de transporte público
 - Desenvolvimento sustentável
 - Economia política 
 email: "" 
@@ -47,5 +47,4 @@ social:
 superuser: true
 title: Igor Laltuf
 ---
-<br><br>
 Meu nome é Igor Laltuf, sou economista e atualmente trabalho com análise de dados sobre cidades intermediárias do desenvolvimento sociobioeconômico na amazônia brasileira usando a linguagem R. Estou terminando o mestrado em planejamento urbano e regional no [IPPUR-UFRJ](https://ippur.ufrj.br/) e minha pesquisa é sobre o sistema BRT da cidade do Rio de Janeiro. Na universidade, faço parte dos laboratórios CiDiMob (Cidade, Direito e Mobilidade) e ETTERN (Estado, Trabalho, Território e Natureza).
