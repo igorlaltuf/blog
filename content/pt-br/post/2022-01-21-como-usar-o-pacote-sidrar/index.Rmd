@@ -43,7 +43,7 @@ x <- search_sidra('lavouras temporarias valor da producao')
 x
 ```
 
-Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.
+Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção (em mil reais) segundo a pesquisa de Produção Agrícola Municipal. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.
 
 ```{r message=FALSE, warning=FALSE, attr.output='style="max-height: 500px;"', cache=TRUE, paged.print=FALSE}
 x <- get_sidra(x = 1612)
