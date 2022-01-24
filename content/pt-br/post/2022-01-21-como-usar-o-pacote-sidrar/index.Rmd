@@ -19,29 +19,46 @@ projects: []
 
 O pacote sidraR permite acessar os dados do [Sidra](https://sidra.ibge.gov.br/) - Sistema IBGE de Recuperação Automática diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para tentar responder a seguinte pergunta: Quais foram os municípios brasileiros responsáveis pela maior parte do valor de soja produzido nas regiões Norte e Centro-Oeste em 2020?
 
+Para o nosso exemplo, vou estabelecer que os municípios com valor são aqueles, ao reunir os municípios produtores de soja, estão posicionados acima do terceiro quartil. 
+
 Como o pacote está no [CRAN](https://cran.r-project.org/web/packages/sidrar/index.html), a instalação será pelo comando:
 ```r
 install.packages('sidrar')
 ```
 
 ```{r include=FALSE}
+# carregar pacotes
 library(sidrar)
 library(dplyr)
 library(stringr)
+library(DT)
+library(htmlwidgets)
+library(htmltools)
 ```
 
-A função abaixo permite que busquemos por determinadas palavras-chave nos títulos das tabelas do IBGE. **Importante**: não é permitido usar acentos nessa função.
+A função abaixo permite identificar aquelas tabelas do IBGE que contenham determinadas palavras-chave em seus títulos. **Importante**: não é permitido usar acentos nessa função.
 
 ```{r attr.output='style="max-height: 500px;"', cache=TRUE, paged.print=FALSE}
-x <- search_sidra('lavouras temporarias quantidade produzida')
+x <- search_sidra('lavouras temporarias valor da producao')
 x
 ```
 
-Após uma breve leitura dos nomes das tabelas, percebemos que a informação que precisamos está na Tabela 1612: Área plantada, área colhida, quantidade produzida, rendimento médio e valor da produção das lavouras temporárias.
+Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.
 
-É por meio da função get_sidra() que conseguimos baixar os dados do IBGE para o R. Por meio dos atributos da função eu consigo determinar o nível de detalhe do dado baixado (microrregião, município, estado etc), filtrar apenas as informações de uma região, e até mesmo selecionar uma variável específica. 
+```{r message=FALSE, warning=FALSE, attr.output='style="max-height: 500px;"', cache=TRUE, paged.print=FALSE}
+x <- get_sidra(x = 1612)
+```
 
-Como o objetivo aqui é baixar os dados com o valor da produção, eu seleciono a variável número 215 (valor da produção) por meio do atributo variable. O problema é que ao usar a função get_sidra para baixar os dados da tabela, somos surpreendidos com a mensagem: "Quantidade de valores solicitados X linhas excedeu o limite: 50000". Ou seja, existe uma limitação de que os dados baixados sejam de apenas 50.000 por requisição. Para contornar essa limitação, a solução foi fazer uma requisição para cada região e ir armazenando os resultados em uma tabela que criativamente foi chamada de "tabela".
+```{r include=FALSE}
+x <- datatable(x)
+htmlwidgets::saveWidget(x, file = "tab1.html", selfcontained = TRUE)
+```
+
+<iframe seamless src="tab1.html" width="100%" height="500"></iframe>
+
+
+Como o objetivo aqui é baixar os dados com o valor da produção, eu seleciono a variável número 215 (valor da produção) por meio do atributo "variable". O problema é que ao usar a função get_sidra para baixar os dados da tabela, somos surpreendidos com a mensagem: "Quantidade de valores solicitados X linhas excedeu o limite: 50000". Ou seja, existe uma limitação de que os dados baixados sejam de apenas 50.000 por requisição. Para contornar essa limitação, a solução foi fazer uma requisição para cada região e ir armazenando os resultados em uma tabela que criativamente foi chamada de "tabela".
+
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE, paged.print=FALSE}
 regiao <- c(1,5)
@@ -52,19 +69,21 @@ for(i in regiao){
                  geo = 'City', # nível de detalhe espacial da informação
                  geo.filter = list("Region" = i), #região
                  variable = 215, # variável de interesse
-                 period = as.character(2020)
+                 period = as.character(2020) # ano dos dados
                  )
 tabela <- rbind(tabela,x)
 }
+x <- datatable(tabela)
 ```
 
-Podemos ver as primeiras linhas da nova tabela abaixo.
+Como resultado temos a seguinte tabela:
 
-```{r message=FALSE, warning=FALSE, cache=FALSE, paged.print=FALSE, attr.output='style="max-height: 400px;"'}
-head(tabela)
+```{r include=FALSE}
+htmlwidgets::saveWidget(x, file = "x.html", selfcontained = TRUE)
 ```
+<iframe seamless src="x.html" width="100%" height="500"></iframe>
 
-Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores.
+Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis (colunas do meu dataframe) que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores nas categorias baixa, média baixa, média alta e alta.
 
 ```{r message=FALSE, warning=FALSE, attr.output='style="max-height:400px;"', cache=FALSE, paged.print=FALSE}
 tabela_class <- tabela %>%
@@ -86,29 +105,33 @@ tabela_class <- tabela_class %>%
                         levels = c("Baixo","Médio Baixo","Médio Alto","Alto"))
          )
 tabela_class$municipio_codigo <- as.double(tabela_class$municipio_codigo)
-head(tabela)
 ```
 
-O resultado pode ser visto no mapa abaixo:
+Os resultados podem ser verificados na tabela e no mapa abaixo:
+
+```{r include=FALSE}
+x <- datatable(tabela_class)
+htmlwidgets::saveWidget(x, file = "tab_class.html", selfcontained = TRUE)
+```
+
+<iframe seamless src="tab_class.html" width="100%" height="500"></iframe>
+
 
 ```{r message=FALSE, warning=FALSE}
 library(mapview)
 library(geobr)
 library(RColorBrewer)
+mapviewOptions(fgb = FALSE)
 mapa_soja <- geobr::read_municipality(showProgress = F) %>% 
   filter(str_detect(code_state, "^1|^5")) %>% 
   left_join(tabela_class, by = c('code_muni' = 'municipio_codigo'))
 
-mapview::mapview(mapa_soja, zcol = "class", label = 'name_muni', col.regions = brewer.pal(4, "YlOrRd"))
+mapa_soja <- mapview::mapview(mapa_soja, zcol = "class", label = 'name_muni', col.regions = brewer.pal(4, "YlOrRd"))
+
+mapview::mapshot(mapa_soja, url = 'mapa.html') # salva mapview em html
 ```
 
-
-
-
-
-
-
-
+<iframe seamless src="mapa.html" width="100%" height="500"></iframe>
 
 
 

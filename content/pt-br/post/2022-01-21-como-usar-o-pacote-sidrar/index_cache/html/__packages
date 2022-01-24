@@ -2,3 +2,7 @@ base
 sidrar
 dplyr
 stringr
+htmlwidgets
+widgetframe
+DT
+htmltools
