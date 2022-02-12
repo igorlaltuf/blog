@@ -16,10 +16,10 @@ focal_point: ''
 preview_only: no
 projects: []
 ---
+ 
+O pacote sidraR permite acessar os dados do [Sidra](https://sidra.ibge.gov.br/) (Sistema IBGE de Recuperação Automática) diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para descobrir quais foram os municípios brasileiros responsáveis pela maior parte do valor de soja produzido nas regiões Norte e Centro-Oeste em 2020.
 
-O pacote sidraR permite acessar os dados do [Sidra](https://sidra.ibge.gov.br/) - Sistema IBGE de Recuperação Automática diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para tentar responder a seguinte pergunta: Quais foram os municípios brasileiros responsáveis pela maior parte do valor de soja produzido nas regiões Norte e Centro-Oeste em 2020?
-
-Para o nosso exemplo, vou estabelecer que os municípios com valor são aqueles, ao reunir os municípios produtores de soja, estão posicionados acima do terceiro quartil. 
+Vamos agrupar os valores de cada município que produz soja em quatro categorias - baixo, médio baixo, médio alto e alto. Os intervalos abrangidos pelas categorias serão definidos por meio dos quartis.    
 
 Como o pacote está no [CRAN](https://cran.r-project.org/web/packages/sidrar/index.html), a instalação será pelo comando:
 ```r
@@ -43,7 +43,7 @@ x <- search_sidra('lavouras temporarias valor da producao')
 x
 ```
 
-Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção (em mil reais) segundo a pesquisa de Produção Agrícola Municipal. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.
+Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção (em mil reais) provenientes da pesquisa de Produção Agrícola Municipal. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.
 
 ```{r message=FALSE, warning=FALSE, attr.output='style="max-height: 500px;"', cache=TRUE, paged.print=FALSE}
 x <- get_sidra(x = 1612)
@@ -83,7 +83,7 @@ htmlwidgets::saveWidget(x, file = "x.html", selfcontained = TRUE)
 ```
 <iframe seamless src="x.html" width="100%" height="500"></iframe>
 
-Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis (colunas do meu dataframe) que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores nas categorias baixa, média baixa, média alta e alta.
+Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis (colunas do meu dataframe) que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores de acordo com as categorias.
 
 ```{r message=FALSE, warning=FALSE, attr.output='style="max-height:400px;"', cache=FALSE, paged.print=FALSE}
 tabela_class <- tabela %>%
@@ -107,7 +107,7 @@ tabela_class <- tabela_class %>%
 tabela_class$municipio_codigo <- as.double(tabela_class$municipio_codigo)
 ```
 
-Os resultados podem ser verificados na tabela e no mapa abaixo:
+Pronto! Como resultado, temos uma tabela que mostra quais os municípios que mais produziram soja em 2020, de acordo com o valor da produção. 
 
 ```{r include=FALSE}
 x <- datatable(tabela_class)
@@ -116,6 +116,8 @@ htmlwidgets::saveWidget(x, file = "tab_class.html", selfcontained = TRUE)
 
 <iframe seamless src="tab_class.html" width="100%" height="500"></iframe>
 
+
+Uma outra forma mais interessante de visualizar os dados é por meio de um mapa: 
 
 ```{r message=FALSE, warning=FALSE}
 library(mapview)

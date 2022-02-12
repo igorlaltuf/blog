@@ -1,8 +1,8 @@
 ---
 date: "2021-01-24"
-linkTitle: Data Science
+linkTitle: R para ciências sociais
 summary: An example of using Wowchemy's Book layout for publishing online courses.
-title: "\U0001F4CA Learn Data Science"
+title: "\U0001F4CA R para ciências sociais"
 type: book
 ---
 
@@ -10,13 +10,13 @@ type: book
 
 {{< toc hide_on="xl" >}}
 
-## What you will learn
+## O que eu vou aprender?
 
 - Fundamental {{<hl>}}Python programming skills{{</hl>}}
 - {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
 - Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
 
-## Program overview
+## Visão global do curso
 
 The demand for skilled data science practitioners is rapidly growing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi.
 

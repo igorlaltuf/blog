@@ -2,7 +2,7 @@
 # An instance of the Portfolio widget.
 # Documentation: https://wowchemy.com/docs/page-builder/
 widget: portfolio
-
+active: false
 # This file represents a page section.
 headless: true
 
@@ -19,6 +19,7 @@ content:
   # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
   filter_default: 0
 
+
   # Filter toolbar (optional).
   # Add or remove as many filters (`filter_button` instances) as you like.
   # To show all items, set `tag` to "*".
@@ -27,10 +28,10 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Deep Learning
-    tag: Deep Learning
-  - name: Other
-    tag: Demo
+  - name: Linguagem R
+    tag: Linguagem R
+  - name: Python
+    tag: Python
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

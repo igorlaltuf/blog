@@ -20,8 +20,8 @@ projects: []
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
-<p>O pacote sidraR permite acessar os dados do <a href="https://sidra.ibge.gov.br/">Sidra</a> - Sistema IBGE de Recuperação Automática diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para tentar responder a seguinte pergunta: Quais foram os municípios brasileiros responsáveis pela maior parte do valor de soja produzido nas regiões Norte e Centro-Oeste em 2020?</p>
-<p>Para o nosso exemplo, vou estabelecer que os municípios com valor são aqueles, ao reunir os municípios produtores de soja, estão posicionados acima do terceiro quartil.</p>
+<p>O pacote sidraR permite acessar os dados do <a href="https://sidra.ibge.gov.br/">Sidra</a> (Sistema IBGE de Recuperação Automática) diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para descobrir quais foram os municípios brasileiros responsáveis pela maior parte do valor de soja produzido nas regiões Norte e Centro-Oeste em 2020.</p>
+<p>Vamos agrupar os valores de cada município que produz soja em quatro categorias - baixo, médio baixo, médio alto e alto. Os intervalos abrangidos pelas categorias serão definidos por meio dos quartis.</p>
 <p>Como o pacote está no <a href="https://cran.r-project.org/web/packages/sidrar/index.html">CRAN</a>, a instalação será pelo comando:</p>
 <pre class="r"><code>install.packages(&#39;sidrar&#39;)</code></pre>
 <p>A função abaixo permite identificar aquelas tabelas do IBGE que contenham determinadas palavras-chave em seus títulos. <strong>Importante</strong>: não é permitido usar acentos nessa função.</p>
@@ -52,7 +52,7 @@ x</code></pre>
 ## [23] &quot;Tabela 6957 - Produção, Valor da produção, Venda, Valor da venda e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por tipologia, produtos da lavoura temporária, condição do produtor em relação às terras e grupos de atividade econômica&quot;                                                                 
 ## [24] &quot;Tabela 6958 - Produção, Valor da produção, Venda, Valor da venda e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por tipologia, produtos da lavoura temporária, tipo de semente e grupos de área colhida&quot;                                                                                                  
 ## [25] &quot;Tabela 6959 - Produção, Valor da produção, Venda, Valor da venda e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por tipologia, produtos da lavoura temporária e grupos de área total&quot;</code></pre>
-<p>Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção (em mil reais) segundo a pesquisa de Produção Agrícola Municipal. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.</p>
+<p>Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção (em mil reais) provenientes da pesquisa de Produção Agrícola Municipal. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.</p>
 <pre class="r"><code>x &lt;- get_sidra(x = 1612)</code></pre>
 <iframe seamless src="tab1.html" width="100%" height="500">
 </iframe>
@@ -73,7 +73,7 @@ x &lt;- datatable(tabela)</code></pre>
 <p>Como resultado temos a seguinte tabela:</p>
 <iframe seamless src="x.html" width="100%" height="500">
 </iframe>
-<p>Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis (colunas do meu dataframe) que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores nas categorias baixa, média baixa, média alta e alta.</p>
+<p>Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis (colunas do meu dataframe) que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores de acordo com as categorias.</p>
 <pre class="r"><code>tabela_class &lt;- tabela %&gt;%
   janitor::clean_names() %&gt;%
   select(5,6,7,9,13) %&gt;%
@@ -93,9 +93,10 @@ tabela_class &lt;- tabela_class %&gt;%
                         levels = c(&quot;Baixo&quot;,&quot;Médio Baixo&quot;,&quot;Médio Alto&quot;,&quot;Alto&quot;))
          )
 tabela_class$municipio_codigo &lt;- as.double(tabela_class$municipio_codigo)</code></pre>
-<p>Os resultados podem ser verificados na tabela e no mapa abaixo:</p>
+<p>Pronto! Como resultado, temos uma tabela que mostra quais os municípios que mais produziram soja em 2020, de acordo com o valor da produção.</p>
 <iframe seamless src="tab_class.html" width="100%" height="500">
 </iframe>
+<p>Uma outra forma mais interessante de visualizar os dados é por meio de um mapa:</p>
 <pre class="r"><code>library(mapview)
 library(geobr)
 library(RColorBrewer)

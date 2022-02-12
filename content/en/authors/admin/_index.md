@@ -1,46 +1,50 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
-Educação:
+bio: 
+education:
   courses:
-  - course: Mestrado em Planejamento Urbano e Regional
+  - course: Master in Urban and Regional Planning
     institution: Universidade Federal do Rio de Janeiro (IPPUR-UFRJ)
-    year: 2019 (em andamento)
-  - course: Graduação em economia
+    year: 2019
+  - course: Bachelor of Economics
     institution: Universidade Federal Fluminense (UFF)
     year: 2015
 email: ""
 highlight_name: true
-Interesses:
-- Relações entre governo e setor privado
-- Infraestrutura de transporte público
-- Desenvolvimento sustentável
-- Economia política 
-Organizações:
+interests:
+- Relations between government and private sector
+- Public transport infrastructure
+- Sustainable development
+- Political economy 
+email: "" 
+highlight_name: true
+organizations:
 - name: IPPUR-UFRJ
   url: https://ippur.ufrj.br/
-role: Economista e mestrando em Planejamento Urbano e Regional
+role: Economist 
 social:
 - icon: researchgate
   icon_pack: fab
   target: blank
+  label: Research Gate
   link: https://www.researchgate.net/profile/Igor-Laltuf
-- icon: orcid
-  icon_pack: fab
-  target: blank
-  link: https://orcid.org/0000-0002-5614-4404
 - icon: github
   icon_pack: fab
   target: blank
   link: https://github.com/igorlaltuf
+- icon: orcid
+  icon_pack: fab
+  target: blank
+  link: https://orcid.org/0000-0002-5614-4404
 - icon: linkedin
   icon_pack: fab
   target: blank
-  link: https://www.linkedin.com/in/igor-laltuf
+  link: https://www.linkedin.com/in/igor-laltuf/?locale=en_US
+- icon: lattes
+  icon_pack: ai
+  target: blank
+  link: http://lattes.cnpq.br/5699782942046423
 
 superuser: true
 title: Igor Laltuf
 ---
-<br><br><br>
-Meu nome é Igor Laltuf, sou economista e atualmente trabalho com análise de dados sobre cidades intermediárias do desenvolvimento sociobioeconômico na amazônia brasileira usando a linguagem R. Estou terminando o mestrado em planejamento urbano e regional no [IPPUR-UFRJ](https://ippur.ufrj.br/) e minha pesquisa é sobre o sistema BRT da cidade do Rio de Janeiro. Na universidade, faço parte dos laboratórios CiDiMob (Cidade, Direito e Mobilidade) e ETTERN (Estado, Trabalho, Território e Natureza).
-
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+My name is Igor Laltuf, I'm an economist and currently I work with data analysis on intermediary cities of socio-bioeconomic development in the Brazilian Amazon using the R language. I'm finishing my master's degree in urban and regional planning at IPPUR-UFRJ and my research is about the BRT system in the city of Rio de Janeiro. At the university, I am part of the CiDiMob (City, Law and Mobility) and ETTERN (State, Work, Territory and Nature) laboratories.

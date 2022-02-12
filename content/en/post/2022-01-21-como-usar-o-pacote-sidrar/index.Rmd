@@ -1,0 +1,138 @@
+---
+title: Como usar o pacote sidraR
+author: ''
+date: '2022-01-24'
+slug: como-usar-o-pacote-sidrar
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-14T11:21:04-03:00'
+featured: no
+image:
+caption: ''
+focal_point: ''
+preview_only: no
+projects: []
+---
+
+O pacote sidraR permite acessar os dados do [Sidra](https://sidra.ibge.gov.br/) (Sistema IBGE de Recuperação Automática) diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para descobrir quais foram os municípios brasileiros responsáveis pela maior parte do valor de soja produzido nas regiões Norte e Centro-Oeste em 2020.
+
+Vamos agrupar os valores de cada município que produz soja em quatro categorias - baixo, médio baixo, médio alto e alto. Os intervalos abrangidos pelas categorias serão definidor por meio dos quartis.    
+
+Como o pacote está no [CRAN](https://cran.r-project.org/web/packages/sidrar/index.html), a instalação será pelo comando:
+```r
+install.packages('sidrar')
+```
+
+```{r include=FALSE}
+# carregar pacotes
+library(sidrar)
+library(dplyr)
+library(stringr)
+library(DT)
+library(htmlwidgets)
+library(htmltools)
+```
+
+A função abaixo permite identificar aquelas tabelas do IBGE que contenham determinadas palavras-chave em seus títulos. **Importante**: não é permitido usar acentos nessa função.
+
+```{r attr.output='style="max-height: 500px;"', cache=TRUE, paged.print=FALSE}
+x <- search_sidra('lavouras temporarias valor da producao')
+x
+```
+
+Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção (em mil reais) provenientes da pesquisa de Produção Agrícola Municipal. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.
+
+```{r message=FALSE, warning=FALSE, attr.output='style="max-height: 500px;"', cache=TRUE, paged.print=FALSE}
+x <- get_sidra(x = 1612)
+```
+
+```{r include=FALSE}
+x <- datatable(x)
+htmlwidgets::saveWidget(x, file = "tab1.html", selfcontained = TRUE)
+```
+
+<iframe seamless src="tab1.html" width="100%" height="500"></iframe>
+
+
+Como o objetivo aqui é baixar os dados com o valor da produção, eu seleciono a variável número 215 (valor da produção) por meio do atributo "variable". O problema é que ao usar a função get_sidra para baixar os dados da tabela, somos surpreendidos com a mensagem: "Quantidade de valores solicitados X linhas excedeu o limite: 50000". Ou seja, existe uma limitação de que os dados baixados sejam de apenas 50.000 por requisição. Para contornar essa limitação, a solução foi fazer uma requisição para cada região e ir armazenando os resultados em uma tabela que criativamente foi chamada de "tabela".
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, cache=TRUE, paged.print=FALSE}
+regiao <- c(1,5)
+tabela <- data.frame()
+
+for(i in regiao){
+  x <- get_sidra(x = 1612, # código da tabela no Sidra
+                 geo = 'City', # nível de detalhe espacial da informação
+                 geo.filter = list("Region" = i), #região
+                 variable = 215, # variável de interesse
+                 period = as.character(2020) # ano dos dados
+                 )
+tabela <- rbind(tabela,x)
+}
+x <- datatable(tabela)
+```
+
+Como resultado temos a seguinte tabela:
+
+```{r include=FALSE}
+htmlwidgets::saveWidget(x, file = "x.html", selfcontained = TRUE)
+```
+<iframe seamless src="x.html" width="100%" height="500"></iframe>
+
+Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis (colunas do meu dataframe) que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores nas categorias baixa, média baixa, média alta e alta.
+
+```{r message=FALSE, warning=FALSE, attr.output='style="max-height:400px;"', cache=FALSE, paged.print=FALSE}
+tabela_class <- tabela %>%
+  janitor::clean_names() %>%
+  select(5,6,7,9,13) %>%
+  replace(is.na(.), 0) %>% 
+  dplyr::filter(produto_das_lavouras_temporarias %in% "Soja (em grão)",
+                valor > 0) %>%
+  arrange(desc(valor)) 
+
+tabela_class <- tabela_class %>% 
+  mutate(class = case_when(
+         valor <= summary(tabela_class$valor)[2] ~ "Baixo",
+         valor <= summary(tabela_class$valor)[3] ~ "Médio Baixo",
+         valor <= summary(tabela_class$valor)[5] ~ "Médio Alto",
+         valor > summary(tabela_class$valor)[5] ~ "Alto"
+         ),
+         class = factor(class,
+                        levels = c("Baixo","Médio Baixo","Médio Alto","Alto"))
+         )
+tabela_class$municipio_codigo <- as.double(tabela_class$municipio_codigo)
+```
+
+Pronto! Como resultado, temos uma tabela que mostra quais os municípios que mais produziram soja em 2020, de acordo com o valor da produção. 
+
+```{r include=FALSE}
+x <- datatable(tabela_class)
+htmlwidgets::saveWidget(x, file = "tab_class.html", selfcontained = TRUE)
+```
+
+<iframe seamless src="tab_class.html" width="100%" height="500"></iframe>
+
+Uma forma mais interessante de visualizar os dados é por meio de um mapa:
+
+```{r message=FALSE, warning=FALSE}
+library(mapview)
+library(geobr)
+library(RColorBrewer)
+mapviewOptions(fgb = FALSE)
+mapa_soja <- geobr::read_municipality(showProgress = F) %>% 
+  filter(str_detect(code_state, "^1|^5")) %>% 
+  left_join(tabela_class, by = c('code_muni' = 'municipio_codigo'))
+
+mapa_soja <- mapview::mapview(mapa_soja, zcol = "class", label = 'name_muni', col.regions = brewer.pal(4, "YlOrRd"))
+
+mapview::mapshot(mapa_soja, url = 'mapa.html') # salva mapview em html
+```
+
+<iframe seamless src="mapa.html" width="100%" height="500"></iframe>
+
+
+

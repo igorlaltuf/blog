@@ -1,0 +1,111 @@
+---
+title: Como usar o pacote sidraR
+author: ''
+date: '2022-01-24'
+slug: como-usar-o-pacote-sidrar
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-14T11:21:04-03:00'
+featured: no
+image:
+caption: ''
+focal_point: ''
+preview_only: no
+projects: []
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>O pacote sidraR permite acessar os dados do <a href="https://sidra.ibge.gov.br/">Sidra</a> (Sistema IBGE de Recuperação Automática) diretamente pelo R. No exemplo de hoje, vamos fazer um levantamento para descobrir quais foram os municípios brasileiros responsáveis pela maior parte do valor de soja produzido nas regiões Norte e Centro-Oeste em 2020.</p>
+<p>Vamos agrupar os valores de cada município que produz soja em quatro categorias - baixo, médio baixo, médio alto e alto. Os intervalos abrangidos pelas categorias serão definidor por meio dos quartis.</p>
+<p>Como o pacote está no <a href="https://cran.r-project.org/web/packages/sidrar/index.html">CRAN</a>, a instalação será pelo comando:</p>
+<pre class="r"><code>install.packages(&#39;sidrar&#39;)</code></pre>
+<p>A função abaixo permite identificar aquelas tabelas do IBGE que contenham determinadas palavras-chave em seus títulos. <strong>Importante</strong>: não é permitido usar acentos nessa função.</p>
+<pre class="r"><code>x &lt;- search_sidra(&#39;lavouras temporarias valor da producao&#39;)
+x</code></pre>
+<pre style="max-height: 500px;"><code>##  [1] &quot;Tabela 498 - Valor da produção por produtos das lavouras temporárias e grupos de área total&quot;                                                                                                                                                                                                                                        
+##  [2] &quot;Tabela 499 - Valor da produção por produtos das lavouras temporárias e grupo de atividade econômica&quot;                                                                                                                                                                                                                                
+##  [3] &quot;Tabela 500 - Valor da produção por produtos das lavouras temporárias e condição do produtor em relação às terras&quot;                                                                                                                                                                                                                   
+##  [4] &quot;Tabela 822 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, condição produtor em relação às terras, grupos de atividade econômica, grupos de área total e grupos de área colhida&quot;                                                                                      
+##  [5] &quot;Tabela 824 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, tipo de semente, tipo de colheita, tipo de cultivo e destino da produção&quot;                                                                                                                                  
+##  [6] &quot;Tabela 825 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, uso de irrigação, uso de agrotóxicos, uso de adubação e principal mês de plantio e de colheita&quot;                                                                                                            
+##  [7] &quot;Tabela 1272 - Produtos da lavoura temporária nos estabelecimentos agropecuários, segundo indicadores da agricultura familiar e não familiar - FAO&quot;                                                                                                                                                                                  
+##  [8] &quot;Tabela 1612 - Área plantada, área colhida, quantidade produzida, rendimento médio e valor da produção das lavouras temporárias&quot;                                                                                                                                                                                                     
+##  [9] &quot;Tabela 1712 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, condição produtor em relação às terras, grupos de atividade econômica, grupos de área total e grupos de área colhida - (MDA - PRONAF)&quot;                                
+## [10] &quot;Tabela 1716 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, tipo de semente, tipo de colheita e tipo de cultivo - (MDA - PRONAF)&quot;                                                                                                 
+## [11] &quot;Tabela 1720 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, uso de agrotóxicos, uso de adubação e principal mês de plantio e de colheita - (MDA - PRONAF)&quot;                                                                        
+## [12] &quot;Tabela 1723 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por produtos da lavoura temporária, destino da produção e uso de irrigação - (MDA - PRONAF)&quot;                                                                                                              
+## [13] &quot;Tabela 1823 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária e grupos e classes de atividade&quot;                                                                                                                                                                           
+## [14] &quot;Tabela 2237 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, condição produtor em relação às terras, grupos de atividade econômica, grupos de área total e grupos de área colhida - (MDA)&quot;
+## [15] &quot;Tabela 2265 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, tipo de semente, tipo de colheita e tipo de cultivo - (MDA)&quot;                                                                 
+## [16] &quot;Tabela 2266 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, uso de agrotóxicos, uso de adubação e principal mês de plantio e de colheita - (MDA)&quot;                                        
+## [17] &quot;Tabela 2284 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária nos estabelecimentos agropecuários, com agricultura familiar e não familiar, por produtos da lavoura temporária, destino da produção e uso de irrigação - (MDA)&quot;                                                                              
+## [18] &quot;Tabela 2868 - Produção, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, grupos e classes de atividade econômica e uso de agricultura orgânica&quot;                                                                                                                                           
+## [19] &quot;Tabela 3374 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, sexo e residência do produtor, orientação técnica, origem da orientação técnica e nivel de instrução da pessoa que dirige o estabelecimento&quot;                                                              
+## [20] &quot;Tabela 3411 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária por produtos da lavoura temporária, segundo indicadores da agricultura familiar e não familiar - FAO&quot;                                                                                                                                         
+## [21] &quot;Tabela 4109 - Produção, Venda, Valor da produção e Área colhida da lavoura temporária, por produtos da lavoura temporária, tipo de colheita, tipo de semente e classificações de médio produtor&quot;                                                                                                                                    
+## [22] &quot;Tabela 5457 - Área plantada ou destinada à colheita, área colhida, quantidade produzida, rendimento médio e valor da produção das lavouras temporárias e permanentes&quot;                                                                                                                                                               
+## [23] &quot;Tabela 6957 - Produção, Valor da produção, Venda, Valor da venda e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por tipologia, produtos da lavoura temporária, condição do produtor em relação às terras e grupos de atividade econômica&quot;                                                                 
+## [24] &quot;Tabela 6958 - Produção, Valor da produção, Venda, Valor da venda e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por tipologia, produtos da lavoura temporária, tipo de semente e grupos de área colhida&quot;                                                                                                  
+## [25] &quot;Tabela 6959 - Produção, Valor da produção, Venda, Valor da venda e Área colhida da lavoura temporária nos estabelecimentos agropecuários, por tipologia, produtos da lavoura temporária e grupos de área total&quot;</code></pre>
+<p>Após uma breve leitura dos nomes das tabelas, percebe-se que a informação que precisamos está na Tabela 1612, que contém o valor da produção (em mil reais) segundo a pesquisa de Produção Agrícola Municipal. Agora, basta usar a função get_sidra() para baixar os dados da tabela direto para o R na estrutura de um dataframe. Na própria função é possível selecionar os dados que serão baixados de acordo com recorte geográfico, filtrar apenas dados de determinada região ou até mesmo selecionar uma variável específica.</p>
+<pre class="r"><code>x &lt;- get_sidra(x = 1612)</code></pre>
+<iframe seamless src="tab1.html" width="100%" height="500">
+</iframe>
+<p>Como o objetivo aqui é baixar os dados com o valor da produção, eu seleciono a variável número 215 (valor da produção) por meio do atributo “variable”. O problema é que ao usar a função get_sidra para baixar os dados da tabela, somos surpreendidos com a mensagem: “Quantidade de valores solicitados X linhas excedeu o limite: 50000”. Ou seja, existe uma limitação de que os dados baixados sejam de apenas 50.000 por requisição. Para contornar essa limitação, a solução foi fazer uma requisição para cada região e ir armazenando os resultados em uma tabela que criativamente foi chamada de “tabela”.</p>
+<pre class="r"><code>regiao &lt;- c(1,5)
+tabela &lt;- data.frame()
+
+for(i in regiao){
+  x &lt;- get_sidra(x = 1612, # código da tabela no Sidra
+                 geo = &#39;City&#39;, # nível de detalhe espacial da informação
+                 geo.filter = list(&quot;Region&quot; = i), #região
+                 variable = 215, # variável de interesse
+                 period = as.character(2020) # ano dos dados
+                 )
+tabela &lt;- rbind(tabela,x)
+}
+x &lt;- datatable(tabela)</code></pre>
+<p>Como resultado temos a seguinte tabela:</p>
+<iframe seamless src="x.html" width="100%" height="500">
+</iframe>
+<p>Agora vamos filtrar a produção de soja, selecionar apenas aquelas variáveis (colunas do meu dataframe) que serão usadas, substituir os valores faltantes por zero, remover os municípios que tem valor igual a zero e classificar os valores nas categorias baixa, média baixa, média alta e alta.</p>
+<pre class="r"><code>tabela_class &lt;- tabela %&gt;%
+  janitor::clean_names() %&gt;%
+  select(5,6,7,9,13) %&gt;%
+  replace(is.na(.), 0) %&gt;% 
+  dplyr::filter(produto_das_lavouras_temporarias %in% &quot;Soja (em grão)&quot;,
+                valor &gt; 0) %&gt;%
+  arrange(desc(valor)) 
+
+tabela_class &lt;- tabela_class %&gt;% 
+  mutate(class = case_when(
+         valor &lt;= summary(tabela_class$valor)[2] ~ &quot;Baixo&quot;,
+         valor &lt;= summary(tabela_class$valor)[3] ~ &quot;Médio Baixo&quot;,
+         valor &lt;= summary(tabela_class$valor)[5] ~ &quot;Médio Alto&quot;,
+         valor &gt; summary(tabela_class$valor)[5] ~ &quot;Alto&quot;
+         ),
+         class = factor(class,
+                        levels = c(&quot;Baixo&quot;,&quot;Médio Baixo&quot;,&quot;Médio Alto&quot;,&quot;Alto&quot;))
+         )
+tabela_class$municipio_codigo &lt;- as.double(tabela_class$municipio_codigo)</code></pre>
+<p>Os resultados podem ser verificados na tabela e no mapa abaixo:</p>
+<iframe seamless src="tab_class.html" width="100%" height="500">
+</iframe>
+<pre class="r"><code>library(mapview)
+library(geobr)
+library(RColorBrewer)
+mapviewOptions(fgb = FALSE)
+mapa_soja &lt;- geobr::read_municipality(showProgress = F) %&gt;% 
+  filter(str_detect(code_state, &quot;^1|^5&quot;)) %&gt;% 
+  left_join(tabela_class, by = c(&#39;code_muni&#39; = &#39;municipio_codigo&#39;))
+
+mapa_soja &lt;- mapview::mapview(mapa_soja, zcol = &quot;class&quot;, label = &#39;name_muni&#39;, col.regions = brewer.pal(4, &quot;YlOrRd&quot;))
+
+mapview::mapshot(mapa_soja, url = &#39;mapa.html&#39;) # salva mapview em html</code></pre>
+<iframe seamless src="mapa.html" width="100%" height="500">
+</iframe>
