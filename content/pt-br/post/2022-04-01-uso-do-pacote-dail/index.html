@@ -37,16 +37,19 @@ projects: []
 library(dplyr)
 library(ggplot2)
 library(lubridate)
-</code></pre>
+library(gtable)</code></pre>
 <p>O DAIL contém apenas duas funções: requests() e appeals(). A primeira faz o download dos pedidos, a segunda dos dados dos recursos. Por meio do argumento “search” é possível buscar por uma palavra-chave específica.</p>
 <p>É possível tanto fazer o download de todos os pedidos e recursos feitos de 2015 até 2022, como também executar a busca por uma palavra-chave específica dentro dos campos das perguntas ou de suas respostas.</p>
-<pre class="r"><code>requests(search = &#39;all&#39;) # faz o download de todos os pedidos.
+<pre class="r"><code># fazer o download de todos os pedidos
+requests(search = &#39;all&#39;) .
 
-requests(search = &#39;ovni&#39;) # faz o download de todos os pedidos e retorna aqueles que contenham a palavra &quot;ovni&quot; na pergunta realizada ao poder público.
+# fazer o download de todos os pedidos e filtrar aqueles que contenham a palavra &quot;ovni&quot; na pergunta.
+requests(search = &#39;ovni&#39;) 
 
-requests(search = &#39;ovni&#39;, answer = T) # faz o download de todos os pedidos e retorna aqueles que contenham a palavra &quot;ovni&quot; na resposta enviada pelo poder público.
+# fazer o download de todos os pedidos e filtrar aqueles que contenham a palavra &quot;ovni&quot; na resposta.
+requests(search = &#39;ovni&#39;, answer = T) 
 </code></pre>
-<p>O algoritmo de busca do pacote retorna exatamente a palavra que é inserida no argumento search, ou seja, se eu digitar a palavra “carro”, a função não me retorna os pedidos que contenham as palavras “carros” ou “carroceria”.
+<p>O algoritmo de busca do pacote retorna exatamente a palavra que é inserida no argumento “search”, ou seja, se eu digitar a palavra “carro”, a função não me retorna os pedidos que contenham as palavras “carros” ou “carroceria”.
 Para contornar esta limitação, foram feitas seis buscas, que no final tiveram seus resultados unificados na mesma tabela, de modo que fosse possível excluir as linhas repetidas.</p>
 <p>Para fazer as requisições, basta rodar:</p>
 <pre class="r"><code>busca1 &lt;- requests(search = &#39;ovni&#39;)
@@ -85,9 +88,9 @@ ggplot() +
   rename(&#39;quantidade_de_pedidos&#39; = n) %&gt;% 
   arrange(desc(quantidade_de_pedidos))
 </code></pre>
-<iframe seamless src="lai_orgao.html" width="100%" height="500">
-</iframe>
-<p><br>
+<p><img src="plot_ano.png" width="100%" style="display: block; margin: auto;" />
+<iframe seamless src="lai_orgao.html" width="100%" height="500"></iframe>
+<br>
 <br></p>
 <p>Por fim, quanto ao tipo de resposta, apenas em 64% delas foi concedido o acesso à informação, mesmo que parcial.</p>
 <pre class="r"><code>x_decisao &lt;- x %&gt;%

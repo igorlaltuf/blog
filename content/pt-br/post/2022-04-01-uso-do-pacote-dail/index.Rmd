@@ -46,22 +46,24 @@ library(dail)
 library(dplyr)
 library(ggplot2)
 library(lubridate)
-
 ```
 O DAIL contém apenas duas funções: requests() e appeals(). A primeira faz o download dos pedidos, a segunda dos dados dos recursos. Por meio do argumento "search" é possível buscar por uma palavra-chave específica.  
 
 É possível tanto fazer o download de todos os pedidos e recursos feitos de 2015 até 2022, como também executar a busca por uma palavra-chave específica dentro dos campos das perguntas ou de suas respostas.
 
 ```r
-requests(search = 'all') # faz o download de todos os pedidos.
+# fazer o download de todos os pedidos
+requests(search = 'all') .
 
-requests(search = 'ovni') # faz o download de todos os pedidos e retorna aqueles que contenham a palavra "ovni" na pergunta realizada ao poder público.
+# fazer o download de todos os pedidos e filtrar aqueles que contenham a palavra "ovni" na pergunta.
+requests(search = 'ovni') 
 
-requests(search = 'ovni', answer = T) # faz o download de todos os pedidos e retorna aqueles que contenham a palavra "ovni" na resposta enviada pelo poder público.
+# fazer o download de todos os pedidos e filtrar aqueles que contenham a palavra "ovni" na resposta.
+requests(search = 'ovni', answer = T) 
 
 ```
 
-O algoritmo de busca do pacote retorna exatamente a palavra que é inserida no argumento search, ou seja, se eu digitar a palavra "carro", a função não me retorna os pedidos que contenham as palavras "carros" ou "carroceria".
+O algoritmo de busca do pacote retorna exatamente a palavra que é inserida no argumento "search", ou seja, se eu digitar a palavra "carro", a função não me retorna os pedidos que contenham as palavras "carros" ou "carroceria".
 Para contornar esta limitação, foram feitas seis buscas, que no final tiveram seus resultados unificados na mesma tabela, de modo que fosse possível excluir as linhas repetidas.
 
 Para fazer as requisições, basta rodar:
