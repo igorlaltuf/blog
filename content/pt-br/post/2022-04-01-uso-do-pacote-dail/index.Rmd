@@ -140,4 +140,4 @@ x_decisao <- x %>%
 <br>
 <br>
 
-Por fim, para entender melhor o conteúdo dos pedidos e o tipo de informação solicitada, seria necessário verificar o conteúdo dos pedidos - e das suas respostas - por meio de uma análise qualitativa ou com a aplicação de técnicas de análise textual (também possível via linguagem R).
+Por fim, para entender os detalhes sobre o tipo de informação solicitada, seria necessário verificar o conteúdo dos pedidos - e das suas respostas - por meio de uma análise qualitativa ou com a aplicação de técnicas de análise textual (também possível via linguagem R).
