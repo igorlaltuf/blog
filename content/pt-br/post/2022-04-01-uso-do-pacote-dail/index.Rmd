@@ -47,7 +47,7 @@ library(dplyr)
 library(ggplot2)
 library(lubridate)
 ```
-O DAIL contém apenas duas funções: requests() e appeals(). A primeira faz o download dos pedidos, a segunda dos dados dos recursos. Por meio do argumento "search" é possível buscar por uma palavra-chave específica.  
+O DAIL contém apenas duas funções: requests() e appeals(). A primeira faz o download dos pedidos, a segunda realiza dos dados provenientes dos recursos. Por meio do argumento "search" é possível buscar por uma palavra-chave específica.  
 
 É possível tanto fazer o download de todos os pedidos e recursos feitos de 2015 até 2022, como também executar a busca por uma palavra-chave específica dentro dos campos das perguntas ou de suas respostas.
 
@@ -80,7 +80,7 @@ x <- unique(rbind(busca1,busca2,busca3,busca4,busca5,busca6)) %>%
   mutate(data_registro = as_date(dmy(data_registro))) %>%
   arrange(data_registro)
 ```
-O código acima retorna uma tabela com todos os pedidos na ordem em que foram realizados. Ao todo, foram encontrados 152 pedidos de acesso à informação sobre OVNIS de 2015 até março de 2022.
+O código acima retorna uma tabela com todos os pedidos na ordem em que foram realizados. Ao todo, foram encontrados 155 pedidos de acesso à informação sobre OVNIS de 2015 até março de 2022.
 
 <iframe seamless src="lai_ovni.html" width="100%" height="500"></iframe>
 
