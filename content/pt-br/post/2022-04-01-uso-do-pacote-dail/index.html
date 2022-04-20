@@ -36,8 +36,7 @@ projects: []
 <pre class="r"><code>library(dail)
 library(dplyr)
 library(ggplot2)
-library(lubridate)
-library(gtable)</code></pre>
+library(lubridate)</code></pre>
 <p>O DAIL contém apenas duas funções: requests() e appeals(). A primeira faz o download dos pedidos, a segunda dos dados dos recursos. Por meio do argumento “search” é possível buscar por uma palavra-chave específica.</p>
 <p>É possível tanto fazer o download de todos os pedidos e recursos feitos de 2015 até 2022, como também executar a busca por uma palavra-chave específica dentro dos campos das perguntas ou de suas respostas.</p>
 <pre class="r"><code># fazer o download de todos os pedidos
@@ -88,9 +87,9 @@ ggplot() +
   rename(&#39;quantidade_de_pedidos&#39; = n) %&gt;% 
   arrange(desc(quantidade_de_pedidos))
 </code></pre>
-<p><img src="plot_ano.png" width="100%" style="display: block; margin: auto;" />
-<iframe seamless src="lai_orgao.html" width="100%" height="500"></iframe>
-<br>
+<iframe seamless src="lai_orgao.html" width="100%" height="500">
+</iframe>
+<p><br>
 <br></p>
 <p>Por fim, quanto ao tipo de resposta, apenas em 64% delas foi concedido o acesso à informação, mesmo que parcial.</p>
 <pre class="r"><code>x_decisao &lt;- x %&gt;%
