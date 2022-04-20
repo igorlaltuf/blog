@@ -5,7 +5,7 @@ type: project
 image:
   caption:
   focal_point: Smart
-summary: Material interativo da dissertação de mestrado 'O sistema BRT e a Economia Política do transporte público na cidade do Rio de Janeiro'.
+summary: Material interativo da dissertação de mestrado "O sistema BRT e a Economia Política do transporte público na cidade do Rio de Janeiro".
 tags:
 - Rio de Janeiro
 - Desigualdade
@@ -22,7 +22,7 @@ url_slides: ""
 url_video: ""
 ---
 
-Os mapas abaixo fazem parte da Dissertação apresentada no Curso de Mestrado do Programa de Pós-Graduação em Planejamento Urbano e Regional da Universidade Federal do Rio de Janeiro – UFRJ, como parte dos requisitos necessários à obtenção do grau de Mestre em Planejamento Urbano e Regional.
+Os mapas abaixo fazem parte da Dissertação que será apresentada no Curso de Mestrado do Programa de Pós-Graduação em Planejamento Urbano e Regional da Universidade Federal do Rio de Janeiro – UFRJ, como parte dos requisitos necessários à obtenção do grau de Mestre em Planejamento Urbano e Regional.
 <br>
 
 Em caso de citação:
