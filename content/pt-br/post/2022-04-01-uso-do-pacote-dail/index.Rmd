@@ -54,7 +54,7 @@ requests(search = 'all') # realiza o download de todos os pedidos.
 
 requests(search = 'ovni') # faz o download e filtra de acordo com a palavra-chave inserida.
 
-requests(search = 'ovni', answer = T) # igual o comando acima, mas realiza a busca na coluna contendo as respostas dos pedidos.
+requests(search = 'ovni', answer = T) # igual ao comando acima, mas realiza a busca na coluna contendo as respostas dos pedidos.
 
 ```
 

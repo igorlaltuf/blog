@@ -42,7 +42,7 @@ library(lubridate)</code></pre>
 
 requests(search = &#39;ovni&#39;) # faz o download e filtra de acordo com a palavra-chave inserida.
 
-requests(search = &#39;ovni&#39;, answer = T) # igual o comando acima, mas realiza a busca na coluna contendo as respostas dos pedidos.
+requests(search = &#39;ovni&#39;, answer = T) # igual ao comando acima, mas realiza a busca na coluna contendo as respostas dos pedidos.
 </code></pre>
 <p>O algoritmo de busca do pacote retorna exatamente a palavra que é inserida no argumento “search”, ou seja, não retorna palavras que contenham o mesmo radical ou a sua variação no plural. Por exemplo, se eu digitar a palavra “carro”, a função não me retorna os pedidos que contenham as palavras “carros” ou “carroceria”. Para contornar esta limitação, foram feitas seis buscas, que no final tiveram seus resultados unificados na mesma tabela, de modo que fosse possível excluir as linhas repetidas.</p>
 <p>Para fazer as requisições, basta rodar:</p>
