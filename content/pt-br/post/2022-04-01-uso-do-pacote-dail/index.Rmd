@@ -47,24 +47,18 @@ library(dplyr)
 library(ggplot2)
 library(lubridate)
 ```
-O DAIL contém apenas duas funções: requests() e appeals(). A primeira faz o download dos pedidos e a segunda realiza o download dos dados provenientes dos recursos que foram abertos (questionando as respostas dos pedidos). Por meio do argumento "search" é possível buscar por uma palavra-chave específica.  
-
-É possível tanto fazer o download de todos os pedidos e recursos feitos de 2015 até 2022, como também executar a busca por uma palavra-chave específica dentro dos campos das perguntas ou de suas respostas.
+O DAIL contém apenas duas funções: requests() e appeals(). A primeira faz o download dos pedidos e a segunda realiza o download dos dados provenientes dos recursos que foram abertos (questionando as respostas dos pedidos). É possível tanto fazer o download de todos os pedidos e recursos feitos de 2015 até 2022, como também executar a busca por uma palavra-chave específica dentro dos campos das perguntas ou de suas respostas, por meio do argumento "search".
 
 ```r
-# fazer o download de todos os pedidos
-requests(search = 'all') .
+requests(search = 'all') # realiza o download de todos os pedidos.
 
-# fazer o download de todos os pedidos e filtrar aqueles que contenham a palavra "ovni" na pergunta.
-requests(search = 'ovni') 
+requests(search = 'ovni') # faz o download e filtra de acordo com a palavra-chave inserida.
 
-# fazer o download de todos os pedidos e filtrar aqueles que contenham a palavra "ovni" na resposta.
-requests(search = 'ovni', answer = T) 
+requests(search = 'ovni', answer = T) # igual o comando acima, mas realiza a busca na coluna contendo as respostas dos pedidos.
 
 ```
 
-O algoritmo de busca do pacote retorna exatamente a palavra que é inserida no argumento "search", ou seja, se eu digitar a palavra "carro", a função não me retorna os pedidos que contenham as palavras "carros" ou "carroceria".
-Para contornar esta limitação, foram feitas seis buscas, que no final tiveram seus resultados unificados na mesma tabela, de modo que fosse possível excluir as linhas repetidas.
+O algoritmo de busca do pacote retorna exatamente a palavra que é inserida no argumento "search", ou seja, não retorna palavras que contenham o mesmo radical ou a sua variação no plural. Por exemplo, se eu digitar a palavra "carro", a função não me retorna os pedidos que contenham as palavras "carros" ou "carroceria". Para contornar esta limitação, foram feitas seis buscas, que no final tiveram seus resultados unificados na mesma tabela, de modo que fosse possível excluir as linhas repetidas.
 
 Para fazer as requisições, basta rodar:
 
@@ -80,7 +74,7 @@ x <- unique(rbind(busca1,busca2,busca3,busca4,busca5,busca6)) %>%
   mutate(data_registro = as_date(dmy(data_registro))) %>%
   arrange(data_registro)
 ```
-O código acima retorna uma tabela com todos os pedidos na ordem em que foram realizados. Ao todo, foram encontrados 155 pedidos de acesso à informação sobre OVNIS de 2015 até março de 2022.
+O código acima retorna uma tabela com todos os pedidos na ordem em que foram realizados. Ao todo, foram encontrados 155 pedidos de acesso à informação sobre o assunto de 2015 até março de 2022.
 
 <iframe seamless src="lai_ovni.html" width="100%" height="500"></iframe>
 
@@ -107,7 +101,7 @@ knitr::include_graphics("plot_ano.png")
 
 ```
 
-Ao realizar a leitura de alguns dos pedidos, a explicação para a grande quantidade de pedidos nos dois anos mencionados anteriormente deve-se ao fato de que, aparentemente, a mesma pessoa realizou uma grande quantidade de pedidos para diversas instituições, o que foi identificado pela similaridade de escrita nas perguntas enviadas. 
+Ao realizar a leitura de algumas das perguntas, a explicação para a grande quantidade de pedidos nos dois anos mencionados anteriormente deve-se ao fato de que, aparentemente, a mesma pessoa realizou uma grande quantidade de pedidos para diversas instituições, o que foi identificado pela similaridade de escrita nas perguntas enviadas. 
 
 
 Sobre os órgãos que mais responderam pedidos sobre o assunto, apenas três deles concentraram 55% das solicitações recebidas no período: Comando da Aeronáutica (COMAER), Arquivo Nacional(AN) e Comando do Exército(CEX).
