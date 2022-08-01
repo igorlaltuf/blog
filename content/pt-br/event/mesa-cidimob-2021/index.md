@@ -17,11 +17,6 @@ featured: false
 image:
   caption:
   focal_point: Right
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/georgecushen
 location: UFRJ - Evento Online
 publishDate: "2021-12-03T17:00:00Z"
 slides: 
