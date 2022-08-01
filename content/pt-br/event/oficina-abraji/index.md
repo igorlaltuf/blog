@@ -30,7 +30,6 @@ tags:
 - R
 - DAIL
 - Jornalismo de Dados
-- Dados Ambientais
 title: Quer aprender a programar em R? Os pacotes vão te ajudar.
 url_code: ""
 url_pdf: ""
