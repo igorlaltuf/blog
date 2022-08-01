@@ -47,4 +47,4 @@ social:
 superuser: true
 title: Igor Laltuf
 ---
-Meu nome é Igor Laltuf, sou economista e atualmente trabalho com análise de dados sobre cidades intermediárias do desenvolvimento sociobioeconômico na amazônia brasileira usando a linguagem R. Estou terminando o mestrado em planejamento urbano e regional no [IPPUR-UFRJ](https://ippur.ufrj.br/) e minha pesquisa é sobre o sistema BRT da cidade do Rio de Janeiro. Na universidade, faço parte dos laboratórios CiDiMob (Cidade, Direito e Mobilidade) e ETTERN (Estado, Trabalho, Território e Natureza).
+Meu nome é Igor Laltuf, sou economista e atualmente trabalho com análise de dados sobre cidades intermediárias do desenvolvimento sociobioeconômico na amazônia brasileira usando a linguagem R. Estou terminando o mestrado em planejamento urbano e regional no [IPPUR-UFRJ](https://ippur.ufrj.br/) e minha pesquisa é sobre o sistema BRT da cidade do Rio de Janeiro. Na universidade, faço parte dos laboratórios Cidade, Direito e Mobilidade (CIDMOB) e Estado, Trabalho, Território e Natureza (ETTERN).

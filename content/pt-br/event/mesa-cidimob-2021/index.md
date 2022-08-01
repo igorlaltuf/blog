@@ -20,7 +20,7 @@ image:
 location: UFRJ - Evento Online
 publishDate: "2021-12-03T17:00:00Z"
 slides: 
-summary: Mesa redonda apresentada pelo Laboratório Cidade, Direito e Mobilidade (CiDiMob) da UFRJ.
+summary: Mesa redonda apresentada pelo Laboratório Cidade, Direito e Mobilidade (CIDMOB) da UFRJ.
 tags: 
 - mobilidade urbana
 - covid-19
