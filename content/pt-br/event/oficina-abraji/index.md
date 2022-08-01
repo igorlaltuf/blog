@@ -23,7 +23,7 @@ links:
   name: Follow
   url: https://twitter.com/abraji/status/1553842940224700416?t=hI3VtDYb_MCwuf0UdZfKBw&s=08
 location: FAAP - Fundação Armando Alvares Penteado
-publishDate: "2022-07-31T20:00:00Z"
+publishDate: "2022-07-31T18:00:00Z"
 slides: 
 summary: Oficina de pacotes de R no 4º Domingo de Dados do 17º Congresso Internacional de Jornalismo Investigativo.
 tags: 
@@ -31,7 +31,7 @@ tags:
 - DAIL
 - Jornalismo de Dados
 - Dados abertos
-title: Quer aprender a programar em R? Os pacotes vão te ajudar.
+title: Quer aprender a programar em R? Os pacotes vão te ajudar
 url_code: ""
 url_pdf: ""
 url_slides: ""
