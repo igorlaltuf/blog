@@ -4,7 +4,7 @@ header:
   image: ""
 title: Cursos
 type: page
-view: 5
+view: 3
 ---
 
 Cursos online:

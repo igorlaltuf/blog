@@ -8,6 +8,7 @@ type: book
 
 {{< figure src="featured.jpg" >}}
 
+
 ## Sobre o curso
 
 Este curso tem como objetivo ensinar o uso do R e dos seus principais pacotes para análise de dados, com foco em dados públicos. 
