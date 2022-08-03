@@ -1,5 +1,5 @@
 ---
-abstract: No próximo domingo (07/08), eu e a Ana Carolina Moreno - jornalista de dados sênior da TV Globo - iremos apresentar a oficina de introdução ao uso da linguagem de programação R para jornalistas no 4º Domingo de Dados do 17º Congresso Internacional de Jornalismo Investigativo. As inscrições podem ser feitas pelo site da [ABRAJI](https://eventos.congresse.me/congressoabraji) e maiores informações sobre o curso podem ser encontradas [aqui](https://sites.google.com/view/apostila-oficina-r/).
+abstract: No próximo domingo (07/08), eu e a Ana Carolina Moreno - jornalista de dados sênior da TV Globo - iremos apresentar a oficina de introdução ao uso da linguagem de programação R para jornalistas no 4º Domingo de Dados do 17º Congresso Internacional de Jornalismo Investigativo. As inscrições podem ser feitas pelo site da [ABRAJI](https://eventos.congresse.me/congressoabraji), maiores informações sobre o curso podem ser encontradas [aqui](https://sites.google.com/view/apostila-oficina-r/) e o tutorial de instalação do R e do RStudio [aqui](https://www.youtube.com/watch?v=vKgjx52TYBw).
 
 address:
   city: São Paulo

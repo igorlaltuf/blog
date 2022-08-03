@@ -16,6 +16,9 @@ main:
   - name: Eventos
     url: event/
     weight: 40
+  - name: Cursos
+    url: courses/
+    weight: 50
   - name: Blog
     url: post/
     weight: 60

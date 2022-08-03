@@ -4,7 +4,8 @@ header:
   image: ""
 title: Cursos
 type: page
-view: 2
+view: 5
 ---
 
-Esses são os cursos que estarão disponíveis em breve (2022).
+Cursos online:
+
