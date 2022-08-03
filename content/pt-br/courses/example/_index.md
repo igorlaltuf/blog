@@ -1,5 +1,5 @@
 ---
-date: "2022-08-01"
+date: "2022-07-31"
 linkTitle: Introdução ao R para análise de dados públicos
 summary: Este curso tem como objetivo ensinar o processo de análise de dados públicos por meio dos pacotes de R.
 title: "\U0001F4CA Introdução ao R para análise de dados públicos"
@@ -7,7 +7,6 @@ type: book
 ---
 
 {{< figure src="featured.jpg" >}}
-
 
 ## Sobre o curso
 
