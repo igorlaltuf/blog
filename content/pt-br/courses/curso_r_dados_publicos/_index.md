@@ -14,25 +14,7 @@ Este curso tem como objetivo ensinar o uso do R e dos seus principais pacotes pa
 
 ## O que eu vou aprender?
 
-- Introdução ao R e ao RStudio
-- O uso de projetos no RStudio
-- Principais tipos de dados
-- Estruturas de dados (vetores e dataframes)
-- Operadores de seleção
-- Como utilizar funções 
-- Instalação de pacotes
-- Importação de dados 
-- Manipulação de dados com o dplyr
-- Operadores lógicos
-- Operadores aritméticos 
-- Operadores relacionais
-- O operador pipe
-- Pacotes para acessar dados públicos
-- Gráficos com o ggplot2
-- Mapas com dados vetoriais
-- Criação de funções
-- Controle de fluxo (ifelse)
-- Repetição de código (loops)
+Em breve!
 
 ## Data de início e carga horária
 
@@ -62,4 +44,4 @@ Saber usar um computador com o sistema operacional Windows.
 Sim, elas serão disponibilizadas online até três meses após o término do curso.
 {{< /spoiler >}}
 
-{{< cta cta_text="Fazer a inscrição" cta_link="https://forms.gle/fqW3mH2kiR31Y9Go9" >}}
+{{< cta cta_text="Me avise!" cta_link="https://forms.gle/DyBGBX4o6KF4o9V19" >}}
