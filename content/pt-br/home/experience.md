@@ -31,12 +31,12 @@ experience:
     date_end: '2021-12-01'
     description: |2-
         Responsabilidades:
-        
-        * Análise de dados com R
-        * Elaboração de mapas
+        * Análise de dados e elaboração de mapas temáticos com a linguagem R
+        * Versionamento com Git e Github
+        * Queries em SQL
         * Produção de relatórios e artigos científicos
-        * Apresentação de resultados
-        * Treinamento da equipe em Excel
+        * Realização de apresentações de resultados
+        * Treinamento da equipe em Excel e R
 
   - title: Consultor de economia
     company: ATEMAB - UFRRJ
@@ -47,7 +47,7 @@ experience:
     date_end: '2020-12-31'
     description: |2-
         Responsabilidades:
-        * Operacionalização do relatório no Excel
+        * Operacionalização do relatório de toda a equipe no Excel
         * Produção de relatórios
         * Levantamento da legislação sobre lucros cessantes.
         

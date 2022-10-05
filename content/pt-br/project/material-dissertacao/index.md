@@ -5,13 +5,11 @@ type: project
 image:
   caption:
   focal_point: Smart
-summary: Material interativo da dissertação de mestrado "O sistema BRT e a Economia Política do transporte público na cidade do Rio de Janeiro".
+summary: Material interativo da dissertação de mestrado "A Economia Política do Sistema BRT da cidade do Rio de Janeiro".
 tags:
 - Rio de Janeiro
 - Desigualdade
 - Pandemia
-- Vínculos Ativos
-- Renda
 links:
 - name: GitHub
   url: https://github.com/igorlaltuf/dissertacao
@@ -22,12 +20,12 @@ url_slides: ""
 url_video: ""
 ---
 
-Os mapas abaixo fazem parte da Dissertação que será apresentada no Curso de Mestrado do Programa de Pós-Graduação em Planejamento Urbano e Regional da Universidade Federal do Rio de Janeiro – UFRJ, como parte dos requisitos necessários à obtenção do grau de Mestre em Planejamento Urbano e Regional.
+Os mapas abaixo fazem parte da Dissertação do Curso de Mestrado do Programa de Pós-Graduação em Planejamento Urbano e Regional da Universidade Federal do Rio de Janeiro – UFRJ, como parte dos requisitos necessários à obtenção do grau de Mestre em Planejamento Urbano e Regional.
 <br>
 
-Em caso de citação:
+Para citar:
 
-LALTUF, Igor. **O Sistema BRT e a Economia Política do transporte público na cidade do Rio de Janeiro**. 2022. Dissertação (Mestrado em Planejamento Urbano e Regional). Instituto de Pesquisa e Planejamento Urbano e Regional, Universidade Federal do Rio de Janeiro, Rio de Janeiro, 2022.
+LALTUF, Igor. **A Economia Política do Sistema BRT da cidade do Rio de Janeiro**. 2022. Dissertação (Mestrado em Planejamento Urbano e Regional). Instituto de Pesquisa e Planejamento Urbano e Regional, Universidade Federal do Rio de Janeiro, Rio de Janeiro, 2022.
 
 
 
@@ -40,8 +38,4 @@ Fonte: Censo de 2010. Elaboração própria.
 Mapa 2 - Classificação da variação de vínculos ativos de cada bairro em relação ao total do município entre 2019 e 2020 
 <iframe seamless src="bairros_RAIS_Rio.html" width="100%" height="500"></iframe>
 Fonte: Dados da RAIS via datalake base dos dados. Elaboração própria.
-
-
-
-
 

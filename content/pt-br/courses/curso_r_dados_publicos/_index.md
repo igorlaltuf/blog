@@ -18,17 +18,11 @@ Em breve!
 
 ## Data de início e carga horária
 
-- Previsão de início das aulas: **19/09/2022**.
-- Os encontros serão realizados na plataforma Google Meet.
-- As aulas serão às segundas e quartas-feiras às 20:15h e terão duração 1:30h.
-- No total serão 8 encontros, totalizando uma carga horária de 12 horas.
-
+Em breve!
 
 ## Valor
 
-- À vista no PIX: R$ 790,00. 
-
-- Cartão de crédito: 1x R$ 835,00. 
+Em breve!
 
 ## Professor
 

@@ -4,7 +4,7 @@ education:
   courses:
   - course: Mestrado em Planejamento Urbano e Regional
     institution: Universidade Federal do Rio de Janeiro (IPPUR-UFRJ)
-    year: 2019 (em andamento)
+    year: 2022
   - course: Graduação em economia
     institution: Universidade Federal Fluminense (UFF)
     year: 2015
@@ -20,7 +20,7 @@ highlight_name: true
 organizations:
 - name: IPPUR-UFRJ
   url: https://ippur.ufrj.br/
-role: Economista e mestrando em Planejamento Urbano e Regional
+role: Economista e mestre em Planejamento Urbano e Regional
 social:
 - icon: researchgate
   icon_pack: fab
@@ -47,4 +47,4 @@ social:
 superuser: true
 title: Igor Laltuf
 ---
-Meu nome é Igor Laltuf, sou economista e atualmente trabalho com análise de dados sobre cidades intermediárias do desenvolvimento sociobioeconômico na amazônia brasileira usando a linguagem R. Estou terminando o mestrado em planejamento urbano e regional no [IPPUR-UFRJ](https://ippur.ufrj.br/) e minha pesquisa é sobre o sistema BRT da cidade do Rio de Janeiro. Na universidade, faço parte dos laboratórios Cidade, Direito e Mobilidade (CIDMOB) e Estado, Trabalho, Território e Natureza (ETTERN).
+Meu nome é Igor Laltuf, sou economista e mestre em Planejamento Urbano e Regional. Minha atuação recente envolve a análise de dados socioeconômicos e ambientais e de recortes temáticos, como mobilidade urbana, mineração, agronegócio e geração de energia elétrica. Sou o desenvolvedor e mantenedor do pacote de R chamado Data from Access to Information Law ([DAIL](https://CRAN.R-project.org/package=dail)). No Instituto de Pesquisa e Planejamento Urbano e Regional (IPPUR-UFRJ), faço parte dos laboratórios Cidade, Direito e Mobilidade ([CiDMob](https://www.instagram.com/cidmobi.ufrj/?igshid=YmMyMTA2M2Y%3D)) e Estado, Trabalho, Território e Natureza (ETTERN).

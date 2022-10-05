@@ -14,7 +14,7 @@ publication_types: "6"
 tags:
 - BNDES
 - Financiamento público
-title: BNDES:grupos econômicos, setor público e sociedade civil (Capítulo 1)
+title: "BNDES: grupos econômicos, setor público e sociedade civil (Capítulo 1)"
 url_code: ""
 url_dataset: ""
 url_pdf: https://web.bndes.gov.br/bib/jspui/bitstream/1408/18980/1/FCLiv213784_BNDES_grupos%20economicos%20setor%20p%c3%bablico%20e%20sociedade%20civil_2017_P_BD.pdf
